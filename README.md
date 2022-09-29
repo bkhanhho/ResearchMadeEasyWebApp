@@ -1,4 +1,4 @@
-# resme
+# RESme
 Monorepo for all resme software. Please put indiviudal systems in their own folder. Please fork big changes and ask for review.
 
 # Front
@@ -15,4 +15,18 @@ Monorepo for all resme software. Please put indiviudal systems in their own fold
 *ADD DRAWING HERE*
 
 # Back
-
+- Search
+  - (str, filters) -> Elastic list -> ElasticToDocs
+- ElasticToDocs
+  - (Elastic list) -> List
+- RelatedToDocs 
+  - (Graph list) -> List
+- GPT3
+  - Get summary and cache
+  - Get feature paper 
+  - (Paper text) -> String
+- GetRawPapers
+- Build knowledge graph
+  - Get Paper UID
+  - use ArXiv X UID
+  - Store graph
