@@ -11,8 +11,8 @@ Monorepo for all resme software. Please put indiviudal systems in their own fold
   - (user ID) -> list (from database)
 - Add saved papers
   - (user ID, Paper ID) -> list (from database)
-  
-*ADD DRAWING HERE*
+## UML Diagram
+![CapstoneUML drawio](https://user-images.githubusercontent.com/59324140/193092660-a1c0e398-ba30-4bfe-a52d-1999c06d45fd.png)
 
 # Back
 - Search
