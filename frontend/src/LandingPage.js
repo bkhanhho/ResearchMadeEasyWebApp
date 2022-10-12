@@ -6,18 +6,18 @@ import {
     InputGroup, 
     InputLeftElement,
     Stack,
-     } from '@chakra-ui/react'
-  import {
+    } from '@chakra-ui/react'
+import {
     List,
     ListItem,
     ListIcon,
     OrderedList,
     UnorderedList,
-  } from '@chakra-ui/react'
-  import {SearchIcon} from '@chakra-ui/icons'
-  import { Select } from '@chakra-ui/react'
-  import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
-  import { Divider } from '@chakra-ui/react'
+    } from '@chakra-ui/react'
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+import { Divider } from '@chakra-ui/react'
+import { Link } from '@chakra-ui/react'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
   //import {MdArrowDropDown } from '@chakra-ui/react'
   
   function LandingPage() {
@@ -46,6 +46,11 @@ import {
                 </TabPanel>
                 </TabPanels>
             </Tabs>
+            {/* TODO: This should be on the right of tab */}
+            <Link color='teal.500' href='#'>
+                Read paper
+            </Link>
+            
             <Heading as='h6' size='xs'>
                 (xs) Paper metadata (author, subject, year)
             </Heading>
