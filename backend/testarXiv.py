@@ -3,6 +3,7 @@ import urllib.request as libreq
 import feedparser
 from MySQLdb import _mysql
 from elasticsearch import Elasticsearch, helpers
+import PyPDF2 
 
 
 ml_papers = ["2209.15635,2209.15634,2209.15626,2209.15621,2209.15616,2209.15595"]
@@ -22,6 +23,26 @@ es = Elasticsearch(
 
 print(es.info())
 
+
+# ----------------- pdf -----------------------
+# creating a pdf file object 
+pdfFileObj = open('example.pdf', 'rb') # read in binary mode
+    
+# creating a pdf reader object 
+pdfReader = PyPDF2.PdfFileReader(pdfFileObj) 
+    
+# printing number of pages in pdf file 
+print(pdfReader.numPages) 
+    
+# creating a page object 
+for page_index in range(len(pdfReader.numPages)):
+    pageObj = pdfReader.getPage(page_index)     
+    
+    # extracting text from page 
+    print(pageObj.extractText()) 
+    
+# closing the pdf file object 
+pdfFileObj.close() 
 
 
 # with libreq.urlopen(api_url) as arxiv_res:
