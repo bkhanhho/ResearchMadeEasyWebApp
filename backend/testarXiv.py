@@ -4,6 +4,7 @@ import feedparser
 from MySQLdb import _mysql
 from elasticsearch import Elasticsearch, helpers
 import PyPDF2 
+import io
 
 
 ml_papers = ["2209.15635,2209.15634,2209.15626,2209.15621,2209.15616,2209.15595"]
@@ -26,8 +27,9 @@ print(es.info())
 
 # ----------------- pdf -----------------------
 # creating a pdf file object 
-pdfFileObj = open('example.pdf', 'rb') # read in binary mode
-    
+# pdfFileObj = open('example.pdf', 'rb') # read in binary mode
+data = None # TODO file from server
+pdfFileObj = io.StringIO(data.decode())
 # creating a pdf reader object 
 pdfReader = PyPDF2.PdfFileReader(pdfFileObj) 
     
