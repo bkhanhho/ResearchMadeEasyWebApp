@@ -1,4 +1,5 @@
 import LandingPage from "./LandingPage"
+import Home from "./Home"
 import ReactDOM from "react-dom";
 import React from "react";
 import {
@@ -50,7 +51,6 @@ function App() {
           <Box>
             <Heading>
               <Link to='/'>RESme</Link> 
-              []
             </Heading>
           </Box>
           <Spacer />
@@ -71,20 +71,6 @@ function App() {
       </Routes>
       </ChakraProvider>
 
-  );
-}
-
-//? add home function?
-
-function Home() {
-  return (
-    <ChakraProvider>
-      <Flex p="2">
-        <Box>
-          <Heading>Home</Heading>
-        </Box>
-      </Flex>
-    </ChakraProvider>
   );
 }
 
