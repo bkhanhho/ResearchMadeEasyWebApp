@@ -48,8 +48,8 @@ function App() {
   return (
       <ChakraProvider theme={theme}>
         <Flex p='5' border='1px' borderColor='gray.400' borderRadius='0' minWidth='max-content' alignItems='center'>
-          <Box>
-            <Heading>
+          <Box p='2' pl='4' pr='60' borderRadius='10' bgGradient="linear(to-l, #1E2650,#922C40)">
+            <Heading textColor='whiteAlpha.900'>
               <Link to='/'>RESme</Link> 
             </Heading>
           </Box>

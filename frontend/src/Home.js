@@ -2,15 +2,16 @@ import {
     ChakraProvider, 
     Heading,
     Flex,
-    Box
+    Box,
+    Input
 } from '@chakra-ui/react'
 
 function Home() {
     return (
       <ChakraProvider>
-        <Flex p="2">
+        <Flex p="5">
           <Box>
-            <Heading>Home</Heading>
+            <Input borderColor='#1E2650' focusBorderColor='#1E2650' htmlSize={60} width='auto' placeholder='Search'/>
           </Box>
         </Flex>
       </ChakraProvider>
