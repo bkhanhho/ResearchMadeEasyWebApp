@@ -1,21 +1,21 @@
-// src/components/Search.js
-
 import React, { useState } from 'react';
 import Scroll from './Scroll';
 import SearchList from './SearchList';
+import Cards from './Cards';
 
 function Sbar({ details }) {
 
   const [searchField, setSearchField] = useState("");
+  const [searchShow, setSearchShow] = useState(false);
 
-  const filteredPersons = details.filter(
-    person => {
+  const SearchedPapers = details.filter(
+    paper => {
       return (
-        person
+        paper
         .name
         .toLowerCase()
         .includes(searchField.toLowerCase()) ||
-        person
+        paper
         .email
         .toLowerCase()
         .includes(searchField.toLowerCase())
@@ -25,14 +25,25 @@ function Sbar({ details }) {
 
   const handleChange = e => {
     setSearchField(e.target.value);
+    if (e.target.value==="") {
+      setSearchShow(false);
+    } else {
+      setSearchShow(true);
+    }
   };
 
   function searchList() {
-    return (
-      <Scroll>
-        <SearchList filteredPersons={filteredPersons} />
-      </Scroll>
-    );
+    if (searchShow) {
+      return (
+        <Scroll>
+          <SearchList filteredPersons={SearchedPapers} />
+        </Scroll>
+      );
+    } else {
+      return (
+        <Cards />
+      );
+    }
   }
 
   return (
@@ -44,7 +55,7 @@ function Sbar({ details }) {
         <input 
           className="pa3 bb br3 grow b--none bg-lightest-blue ma3"
           type = "search" 
-          placeholder = "Search People" 
+          placeholder = "Search Papers" 
           onChange = {handleChange}
         />
       </div>

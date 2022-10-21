@@ -10,7 +10,6 @@ function Main() {
   return (
     <div>
       <Sbar details={initialDetails}/>
-      <Cards />
     </div>
   );
 }
