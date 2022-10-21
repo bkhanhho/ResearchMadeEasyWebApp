@@ -1,54 +1,37 @@
-import { 
-  ChakraProvider, 
-  Heading,
-  Center,
-  Input, 
-  InputGroup, 
-  InputLeftElement,
-  Stack,
-   } from '@chakra-ui/react'
-import {
-  List,
-  ListItem,
-  ListIcon,
-  OrderedList,
-  UnorderedList,
-} from '@chakra-ui/react'
-import {SearchIcon} from '@chakra-ui/icons'
-import { Select } from '@chakra-ui/react'
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+import React from 'react';
+import Navbar from './components/website/Navbar';
+import './App.css';
+import Main from './components/pages/Main';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import Details from './components/pages/paper/Details';
+import Related from './components/pages/paper/Related';
+import Read from './components/pages/paper/Read';
+
+import Account from './components/pages/user/Account';
+import PInfo from './components/pages/user/PInfo';
+import Subscriptions from './components/pages/user/Subscriptions';
+import SPapers from './components/pages/user/SPapers';
+import SignUp from './components/pages/user/SignUp';
 
 function App() {
   return (
-    <ChakraProvider>
-      <Stack spacing={4}>
-        <Center>
-          <Heading as='h3' size='lg'>
-            RESme
-          </Heading>
-        </Center>
-        <InputGroup>
-            <InputLeftElement
-            pointerEvents='none'
-            children={<SearchIcon color='gray.400' />}/>
-            <Input placeholder='Search' />
-          </InputGroup>
-
-          <Select placeholder='Filter and Sort'>
-            <option value='option1'>Artificial Intelligence</option>
-            <option value='option2'>Computer Vision & Pattern Recognition</option>
-            <option value='option3'>Distributed Parallel & Cluster Computing</option>
-          </Select>
-
-          <UnorderedList>
-            <ListItem>A random link 1</ListItem>
-            <ListItem>A random link 2</ListItem>
-            <ListItem>A random link 3</ListItem>
-            <ListItem>A random link 4</ListItem>
-          </UnorderedList>
-      </Stack>
-    </ChakraProvider>
-    
+    <>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path='/' exact component={Main} />
+          <Route path='/details' component={Details} />
+          <Route path='/related-papers' component={Related} />
+          <Route path='/read-paper' component={Read} />
+          <Route path='/account' component={Account} />
+          <Route path='/personal-info' component={PInfo} />
+          <Route path='/subscribe' component={Subscriptions} />
+          <Route path='/saved-papers' component={SPapers} />
+          <Route path='/sign-up' component={SignUp} />
+        </Switch>
+      </Router>
+    </>
   );
 }
 
