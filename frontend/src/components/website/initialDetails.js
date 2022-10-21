@@ -8,6 +8,7 @@ const initialDetails = [
       email: "janedoe@gmail.com",
       address: "New Delhi, India",
     },
+
     {
       id: 2,
       imgPath: "/assets/img/2.png",
@@ -15,6 +16,7 @@ const initialDetails = [
       email: "agra@rosie.com",
       address: "Tbilisi, India",
     },
+
     {
       id: 3,
       imgPath: "/assets/img/3.png",
@@ -22,6 +24,7 @@ const initialDetails = [
       email: "irene@johnlock.com",
       address: "Baker Street, India",
     },
+
     {
       id: 4,
       imgPath: "/assets/img/4.png",
@@ -29,6 +32,7 @@ const initialDetails = [
       email: "mary@johnlock.com",
       address: "Baker Street, India",
     },
+    
     {
       id: 5,
       imgPath: "/assets/img/5.png",
