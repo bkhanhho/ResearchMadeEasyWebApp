@@ -1,3 +1,5 @@
+/* When user is logged in, they can view personal information. */
+
 import React from 'react';
 import '../../../App.css';
 

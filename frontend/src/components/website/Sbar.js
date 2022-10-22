@@ -47,15 +47,15 @@ function Sbar({ details }) {
   }
 
   return (
-    <section className="garamond">
-      <div className="navy georgia ma0 grow">
-        <h2 className="f2">Search your course</h2>
+    <section className="search">
+      <div className="search-bar">
+        <h2 className="f2">Search for articles and papers.</h2>
       </div>
-      <div className="pa2">
+      <div className="search-article-paper">
         <input 
-          className="pa3 bb br3 grow b--none bg-lightest-blue ma3"
+          className="search-input"
           type = "search" 
-          placeholder = "Search Papers" 
+          placeholder = "Search" 
           onChange = {handleChange}
         />
       </div>

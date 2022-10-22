@@ -1,3 +1,5 @@
+/* When user is logged in, they can view their saved papers. */
+
 import React from 'react';
 import '../../../App.css';
 

@@ -1,3 +1,5 @@
+/* User can create account or login. */
+
 import React from 'react';
 import '../../../App.css';
 

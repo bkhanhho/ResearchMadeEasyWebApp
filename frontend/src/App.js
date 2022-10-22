@@ -1,4 +1,4 @@
-// install react-router-dom@5.2.0 to compile
+/* Install react-router-dom@5.2.0 to compile. */
 
 import React from 'react';
 import Navbar from './components/website/Navbar';

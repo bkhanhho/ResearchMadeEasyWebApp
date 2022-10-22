@@ -1,3 +1,5 @@
+/* When user is logged in, the user can view their subscriptions. */
+
 import React from 'react';
 import '../../../App.css';
 

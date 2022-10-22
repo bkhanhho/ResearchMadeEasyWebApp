@@ -1,3 +1,5 @@
+/* Display details of paper. */
+
 import React from 'react';
 import '../../../App.css';
 

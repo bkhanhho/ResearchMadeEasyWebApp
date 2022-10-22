@@ -1,3 +1,5 @@
+/* Display randomly generated papers on the main page. */
+
 import React from 'react';
 import './Cards.css';
 import CardItem from './CardItem';
@@ -10,13 +12,19 @@ function Cards() {
         <div className='cards__wrapper'>
           <ul className='cards__items'>
             <CardItem
+              src='images/img-home.jpg'
+              text='Paper Title'
+              label='Random Paper'
+              path='/main'
+            />
+            <CardItem
               src='images/img.jpg'
               text='Paper Title'
               label='Random Paper'
               path='/main'
             />
             <CardItem
-              src='images/img-home.jpg'
+              src='images/img-1.jpg'
               text='Paper Title'
               label='Random Paper'
               path='/main'
@@ -24,19 +32,19 @@ function Cards() {
           </ul>
           <ul className='cards__items'>
             <CardItem
-              src='images/img.jpg'
+              src='images/img-2.jpg'
               text='Paper Title'
               label='Random Paper'
               path='/details'
             />
             <CardItem
-              src='images/img-home.jpg'
+              src='images/img-3.jpg'
               text='Paper Title'
               label='Random Paper'
               path='/details'
             />
             <CardItem
-              src='images/img.jpg'
+              src='images/img-4.jpg'
               text='Paper Title'
               label='Random Paper'
               path='/details'

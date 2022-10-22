@@ -1,3 +1,5 @@
+/* SignUp Page */
+
 import React from 'react';
 import '../../../App.css';
 

@@ -1,3 +1,5 @@
+/* Read paper view. */
+
 import React from 'react';
 import '../../../App.css';
 
