@@ -20,7 +20,7 @@ model = SentenceTransformer('stsb-roberta-large')
 
 
 
-def findSemanticSimiliarity(sentences1: list, sentences2: list):
+def findSemanticSimiliarity(sentences1: list[str], sentences2: list[str]):
     # encode list of sentences to get their embeddings
     embedding1 = model.encode(sentences1, convert_to_tensor=True)
     embedding2 = model.encode(sentences2, convert_to_tensor=True)
