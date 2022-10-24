@@ -6,7 +6,7 @@
   }
   
   .main,
-  .details,
+  /* .details, */
   .related-papers,
   .read-paper,
   .account,
@@ -21,12 +21,17 @@
   }
   
   .details {
-    background-image: url('/public/images/img-home.jpg');
+    /* display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem; */
+    /* background-image: url('/public/images/img-home.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    color: #fff;
-    font-size: 90px;
+    color: #000000;
+    font-size: 100px; */
   }
   
   .related-papers {

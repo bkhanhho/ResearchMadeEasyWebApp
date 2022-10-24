@@ -23,7 +23,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route path='/' exact component={Main} />
-          <Route path='/details' component={Details} />
+          <Route path='/details' component={Details} /> 
           <Route path='/related-papers' component={Related} />
           <Route path='/read-paper' component={Read} />
           <Route path='/account' component={Account} />

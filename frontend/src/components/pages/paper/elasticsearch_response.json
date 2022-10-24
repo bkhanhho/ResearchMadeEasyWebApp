@@ -1,0 +1,98 @@
+{
+    "took": 5,
+    "timed_out": false,
+    "_shards": {
+        "total": 1,
+        "successful": 1,
+        "skipped": 0,
+        "failed": 0
+    },
+    "hits": {
+        "total": {
+            "value": 2,
+            "relation": "eq"
+        },
+        "max_score": 1.3862942,
+        "hits": [
+            {
+                "_index": "search-rp-metadata",
+                "_id": "5",
+                "_score": 1.3862942,
+                "_source": {
+                    "title": "Vertical Semi-Federated Learning for Efficient Online Advertising",
+                    "link": "https://arxiv.org/pdf/2209.15635.pdf",
+                    "released_date": {
+                        "day": 30,
+                        "month": 9,
+                        "year": 2022
+                    },
+                    "last_updated_date": {
+                        "day": 30,
+                        "month": 9,
+                        "year": 2022
+                    },
+                    "authors": [
+                        {
+                            "name": "Wenjie Li"
+                        },
+                        {
+                            "name": "Qiaolin Xia"
+                        },
+                        {
+                            "name": "Hao Cheng"
+                        },
+                        {
+                            "name": "Kouyin Xue"
+                        },
+                        {
+                            "name": "Shu-Tao Xia"
+                        }
+                    ],
+                    "paper_id": "2209.15635",
+                    "summary": "One or two sentences"
+                }
+            },
+            {
+                "_index": "search-rp-metadata",
+                "_id": "3",
+                "_score": 1.1602942,
+                "_source": {
+                    "title": "FOTS: Fast Oriented Text Spotting with a Unified Network",
+                    "link": "https://arxiv.org/pdf/1801.01671.pdf",
+                    "released_date": {
+                        "day": 22,
+                        "month": 8,
+                        "year": 2022
+                    },
+                    "last_updated_date": {
+                        "day": 10,
+                        "month": 9,
+                        "year": 2022
+                    },
+                    "authors": [
+                        {
+                            "name": "Xuebo Liu"
+                        },
+                        {
+                            "name": "Ding Liang"
+                        },
+                        {
+                            "name": "Shi Yan"
+                        },
+                        {
+                            "name": "Dagui Chen"
+                        },
+                        {
+                            "name": "Yu Qiao"
+                        },
+                        {
+                            "name": "Junjie Yan"
+                        }
+                    ],
+                    "paper_id": "1801.01671",
+                    "summary": "One or two sentences"
+                }
+            }
+        ]
+    }
+}
