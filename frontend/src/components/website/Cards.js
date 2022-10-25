@@ -13,19 +13,19 @@ function Cards() {
           <ul className='cards__items'>
             <CardItem
               src='images/img-home.jpg'
-              text='Paper Title'
+              text='Paper Title 1'
               label='Random Paper'
               path='/main'
             />
             <CardItem
               src='images/img.jpg'
-              text='Paper Title'
+              text='Paper Title 2'
               label='Random Paper'
               path='/main'
             />
             <CardItem
               src='images/img-1.jpg'
-              text='Paper Title'
+              text='Paper Title 3'
               label='Random Paper'
               path='/main'
             />
@@ -33,19 +33,19 @@ function Cards() {
           <ul className='cards__items'>
             <CardItem
               src='images/img-2.jpg'
-              text='Paper Title'
+              text='Paper Title 4'
               label='Random Paper'
               path='/details'
             />
             <CardItem
               src='images/img-3.jpg'
-              text='Paper Title'
+              text='Paper Title 5'
               label='Random Paper'
               path='/details'
             />
             <CardItem
               src='images/img-4.jpg'
-              text='Paper Title'
+              text='Paper Title 6'
               label='Random Paper'
               path='/details'
             />

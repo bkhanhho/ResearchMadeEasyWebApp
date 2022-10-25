@@ -28,7 +28,7 @@ export default function Details() {
     <div className='details'>
         <h1> {title}<br /><br /></h1>
         <p> {displayListOfAuthors(authors)} - {date["year"]} - Subject 1, Subject 2 <br /></p>
-        <h3> Paper Summary</h3>
+        <h3> Paper Summary </h3>
         <p>{summary}</p>
         
     </div>

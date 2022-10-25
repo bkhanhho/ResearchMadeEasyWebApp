@@ -3,8 +3,8 @@
 import React from 'react';
 import Card from './Card';
 
-function SearchList({ filteredPersons }) {
-  const filtered = filteredPersons.map(person =>  <Card key={person.id} person={person} />); 
+function SearchList({ filteredPapers }) {
+  const filtered = filteredPapers.map(paper =>  <Card key={paper.id} paper={paper} />); 
   return (
     <div>
       {filtered}

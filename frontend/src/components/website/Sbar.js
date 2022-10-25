@@ -16,7 +16,7 @@ function Sbar({ details }) {
         .toLowerCase()
         .includes(searchField.toLowerCase()) ||
         paper
-        .email
+        .author
         .toLowerCase()
         .includes(searchField.toLowerCase())
       );
@@ -36,7 +36,7 @@ function Sbar({ details }) {
     if (searchShow) {
       return (
         <Scroll>
-          <SearchList filteredPersons={SearchedPapers} />
+          <SearchList filteredPapers={SearchedPapers} />
         </Scroll>
       );
     } else {
