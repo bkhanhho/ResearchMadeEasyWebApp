@@ -56,4 +56,10 @@ export const PaperLink = () => {
     return (paperLink);
 };
 
+export const PaperCategories = () => {
+    var paper = searchedPaper();
+    var PaperCategories= paper["category"];
+    return (PaperCategories);
+};
+
 

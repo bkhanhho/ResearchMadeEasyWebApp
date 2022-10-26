@@ -5,7 +5,7 @@ import '../../../App.css';
 import './Details.css';
 import { Link } from 'react-router-dom';
 //import { TiBookmark } from "react-icons/ti";
-import {PaperTitle, PaperAuthors, PaperDate, PaperSummary, PaperId, PaperLink} from './PaperDetails';
+import {PaperTitle, PaperAuthors, PaperDate, PaperSummary, PaperId, PaperLink, PaperCategories} from './PaperDetails';
 
 
 
@@ -19,20 +19,33 @@ function displayListOfAuthors(authors) {
   }
   //console.log(authorList);
   return authorList;
-
 }
+
+function displayListOfCategories(categories) {
+  var categoryList = "";
+  for (let i = 0; i < categories.length; i++) {
+    categoryList += categories[i];
+    if (i < categories.length - 1) {
+      categoryList += ", ";
+    }
+  }
+  //console.log(authorList);
+  return categoryList;
+}
+
 export default function Details() {
   var title = PaperTitle();
   var authors = PaperAuthors();
   var date = PaperDate();
   var summary = PaperSummary();
   var link = PaperLink();
+  var categories = PaperCategories();
 
   return (
     <div className='details'>
         <h1> {title}<br /><br /></h1>
         <p align="right"><a href= {link}> Read paper </a></p>
-        <p> {displayListOfAuthors(authors)} - {date["year"]} - Subject 1, Subject 2 <br /></p>
+        <p> {displayListOfAuthors(authors)} - {date["year"]} - {displayListOfCategories(categories)} <br /></p>
         <h3> Paper Summary </h3>
         <p>{summary}</p>
         

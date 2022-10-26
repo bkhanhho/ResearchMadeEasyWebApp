@@ -49,7 +49,8 @@
                         }
                     ],
                     "paper_id": "2209.15635",
-                    "summary": "One or two sentences"
+                    "summary": "One or two sentences",
+                    "category": ["Artificial Intelligence"]
                 }
             },
             {
@@ -90,7 +91,8 @@
                         }
                     ],
                     "paper_id": "1801.01671",
-                    "summary": "One or two sentences"
+                    "summary": "One or two sentences",
+                    "category": ["Computer Vision and Pattern Recognition"]
                 }
             }
         ]
