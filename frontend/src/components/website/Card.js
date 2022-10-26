@@ -4,11 +4,13 @@ import React from 'react';
 
 //NOTE: I changed all the "person" to "paper" (function Card({paper}))
 function Card({paper}) {
+  var link = getCorrectLink(paper.id);
   return(
     <div className="card">
       <img className="card-person" alt={paper.name} src={process.env.PUBLIC_URL + paper.imgPath} />
       <div>
-        <h2><a href="/details"> {paper.name} </a></h2>
+        
+        <h2><a href={link}> {paper.name} </a></h2>
         <p> {displayListOfAuthors(paper.authors)} - {paper.year}</p>
       </div>
     </div>
@@ -23,6 +25,15 @@ function displayListOfAuthors(authors) {
     }
   }
   return authorList;
+
+}
+function getCorrectLink(id) {
+  if (id == 1) {
+    return "/details";
+  }
+  else {
+    return "/detail";
+  }
 
 }
 export default Card;

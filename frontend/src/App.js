@@ -7,6 +7,7 @@ import Main from './components/pages/Main';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Details from './components/pages/paper/Details';
+import Detail from './components/pages/paper/Detail';
 import Related from './components/pages/paper/Related';
 import Read from './components/pages/paper/Read';
 
@@ -25,6 +26,7 @@ function App() {
         <Switch>
           <Route path='/' exact component={Main} />
           <Route path='/details' component={Details} /> 
+          <Route path='/detail' component={Detail} />
           <Route path='/related-papers' component={Related} />
           <Route path='/read-paper' component={Read} />
           <Route path='/account' component={Account} />
