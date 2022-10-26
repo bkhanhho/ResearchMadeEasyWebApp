@@ -21,16 +21,8 @@
                 "_source": {
                     "title": "Vertical Semi-Federated Learning for Efficient Online Advertising",
                     "link": "https://arxiv.org/pdf/2209.15635.pdf",
-                    "released_date": {
-                        "day": 30,
-                        "month": 9,
-                        "year": 2022
-                    },
-                    "last_updated_date": {
-                        "day": 30,
-                        "month": 9,
-                        "year": 2022
-                    },
+                    "released_date": "2022-09-30",
+                    "last_updated_date": "2022-09-30",
                     "authors": [
                         {
                             "name": "Wenjie Li"
@@ -49,7 +41,8 @@
                         }
                     ],
                     "paper_id": "2209.15635",
-                    "summary": "One or two sentences"
+                    "summary": "One or two sentences",
+                    "category": ["Artificial Intelligence"]
                 }
             },
             {
@@ -59,16 +52,8 @@
                 "_source": {
                     "title": "FOTS: Fast Oriented Text Spotting with a Unified Network",
                     "link": "https://arxiv.org/pdf/1801.01671.pdf",
-                    "released_date": {
-                        "day": 22,
-                        "month": 8,
-                        "year": 2022
-                    },
-                    "last_updated_date": {
-                        "day": 10,
-                        "month": 9,
-                        "year": 2022
-                    },
+                    "released_date": "2022-08-22",
+                    "last_updated_date": "2022-09-10",
                     "authors": [
                         {
                             "name": "Xuebo Liu"
@@ -90,7 +75,8 @@
                         }
                     ],
                     "paper_id": "1801.01671",
-                    "summary": "One or two sentences"
+                    "summary": "One or two sentences",
+                    "category": ["Computer Vision and Pattern Recognition"]
                 }
             }
         ]
