@@ -32,7 +32,7 @@ function Cards() {
           </ul>
           <ul className='cards__items'>
             <CardItem
-              src='images/img-2.jpg'
+              src='images/img-7.jpg'
               text='Random Paper Title for Artificial Intelligence'
               label='Random Paper'
               path='/details'

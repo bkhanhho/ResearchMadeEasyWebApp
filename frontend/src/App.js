@@ -14,7 +14,7 @@ import Account from './components/pages/user/account/Account';
 import PInfo from './components/pages/user/account/PInfo';
 import Subscriptions from './components/pages/user/account/Subscriptions';
 import SPapers from './components/pages/user/account/SPapers';
-import SignUp from './components/pages/user/signup-login/SignUp';
+// import SignUp from './components/pages/user/signup-login/SignUp';
 import Form from './components/pages/user/signup-login/Form';
 
 function App() {
@@ -31,10 +31,9 @@ function App() {
           <Route path='/personal-info' component={PInfo} />
           <Route path='/subscribe' component={Subscriptions} />
           <Route path='/saved-papers' component={SPapers} />
-          <Route path='/sign-up' component={SignUp} />
+          <Route path='/sign-up' component={Form} />
         </Switch>
       </Router>
-      {/* return <Form /> */}
     </>
   );
 }
