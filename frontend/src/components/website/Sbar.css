@@ -1,0 +1,21 @@
+.search-bar {
+    padding: 1.5rem;
+}
+
+h2 {
+    text-align: center;
+}
+
+.search-article-paper {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.search-input { 
+    height: 40px;
+    width: 500px;
+    font-size: 14pt;
+    border-color: black;
+    border-radius: 10px;
+}

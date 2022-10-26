@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Scroll from './Scroll';
 import SearchList from './SearchList';
 import Cards from './Cards';
+import './Sbar.css';
 
 function Sbar({ details }) {
 
@@ -49,13 +50,13 @@ function Sbar({ details }) {
   return (
     <section className="search">
       <div className="search-bar">
-        <h2 className="f2">Search for articles and papers.</h2>
+        <h2 className="f2">Research Made Easy</h2>
       </div>
       <div className="search-article-paper">
         <input 
           className="search-input"
-          type = "search" 
-          placeholder = "Search" 
+          type = "search"
+          placeholder = "  Search" 
           onChange = {handleChange}
         />
       </div>
