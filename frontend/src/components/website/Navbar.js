@@ -41,7 +41,7 @@ function Navbar() {
               </Link>
             </li>
 
-            <li className='nav-item'>
+            {/* <li className='nav-item'>
               <Link
                 to='/details'
                 className='nav-links'
@@ -49,9 +49,9 @@ function Navbar() {
               >
                 Details
               </Link>
-            </li>
+            </li> */}
 
-            <li className='nav-item'>
+            {/* <li className='nav-item'>
               <Link
                 to='/related-papers'
                 className='nav-links'
@@ -69,7 +69,7 @@ function Navbar() {
               >
                 Read Paper
               </Link>
-            </li>
+            </li> */}
             
             <li className='nav-item'>
               <Link
@@ -81,7 +81,7 @@ function Navbar() {
               </Link>
             </li>
             
-            <li className='nav-item'>
+            {/* <li className='nav-item'>
               <Link
                 to='/personal-info'
                 className='nav-links'
@@ -109,7 +109,7 @@ function Navbar() {
               >
                 Saved Papers
               </Link>
-            </li>
+            </li> */}
 
             <li>
               <Link

@@ -1,5 +1,5 @@
 .cards {
-    padding: 4rem;
+    padding: 2rem;
     background: #fff;
   }
   
@@ -60,7 +60,7 @@
     content: attr(data-category);
     position: absolute;
     bottom: 0;
-    margin-left: 10px;
+    margin-left: 35px;
     padding: 6px 8px;
     max-width: calc((100%) - 60px);
     font-size: 12px;

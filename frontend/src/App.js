@@ -10,11 +10,12 @@ import Details from './components/pages/paper/Details';
 import Related from './components/pages/paper/Related';
 import Read from './components/pages/paper/Read';
 
-import Account from './components/pages/user/Account';
-import PInfo from './components/pages/user/PInfo';
-import Subscriptions from './components/pages/user/Subscriptions';
-import SPapers from './components/pages/user/SPapers';
-import SignUp from './components/pages/user/SignUp';
+import Account from './components/pages/user/account/Account';
+import PInfo from './components/pages/user/account/PInfo';
+import Subscriptions from './components/pages/user/account/Subscriptions';
+import SPapers from './components/pages/user/account/SPapers';
+import SignUp from './components/pages/user/signup-login/SignUp';
+import Form from './components/pages/user/signup-login/Form';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path='/sign-up' component={SignUp} />
         </Switch>
       </Router>
+      {/* return <Form /> */}
     </>
   );
 }
