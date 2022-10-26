@@ -4,7 +4,7 @@ import '../../../App.css';
 
 /* This will receive the response from backend */ 
 function getPaperResponse() {
-    const jsonObj = require('./elasticsearch_response.json');
+    const jsonObj = require('./elasticsearch_response.json'); // get response from backend, check if 200 then proceed with next step.
     return jsonObj;
 }
 
