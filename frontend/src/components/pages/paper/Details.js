@@ -2,9 +2,12 @@
 
 import React from 'react';
 import '../../../App.css';
-//import myJson from './elasticsearch_response.json' assert {type: 'json'};
-//import paperDetails from './PaperDetails';
-import {PaperTitle, PaperAuthors, PaperDate, PaperSummary} from './PaperDetails';
+import './Details.css';
+import { Link } from 'react-router-dom';
+//import { TiBookmark } from "react-icons/ti";
+import {PaperTitle, PaperAuthors, PaperDate, PaperSummary, PaperId, PaperLink} from './PaperDetails';
+
+
 
 function displayListOfAuthors(authors) {
   var authorList = "";
@@ -23,10 +26,12 @@ export default function Details() {
   var authors = PaperAuthors();
   var date = PaperDate();
   var summary = PaperSummary();
+  var link = PaperLink();
 
   return (
     <div className='details'>
         <h1> {title}<br /><br /></h1>
+        <p align="right"><a href= {link}> Read paper </a></p>
         <p> {displayListOfAuthors(authors)} - {date["year"]} - Subject 1, Subject 2 <br /></p>
         <h3> Paper Summary </h3>
         <p>{summary}</p>
@@ -35,4 +40,34 @@ export default function Details() {
     );
 
 }
+
+// const STYLES = ['btn--primary', 'btn--outline', 'btn--test'];
+
+// const SIZES = ['btn--medium', 'btn--large'];
+
+// export const DetailsBookmark = ({
+//   children,
+//   type,
+//   onClick,
+//   buttonStyle,
+//   buttonSize
+// }) => {
+//   const checkButtonStyle = STYLES.includes(buttonStyle)
+//     ? buttonStyle
+//     : STYLES[0];
+
+//   const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
+
+//   return (
+//     <Link to='/sign-up' className='btn-mobile'> 
+//       <button
+//         className={`btn ${checkButtonStyle} ${checkButtonSize}`}
+//         onClick={onClick}
+//         type={type}
+//       >
+//         {children}
+//       </button>
+//     </Link>
+//   );
+// };
 

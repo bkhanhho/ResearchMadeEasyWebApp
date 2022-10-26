@@ -44,4 +44,16 @@ export const PaperSummary = () => {
     return (summary);
 };
 
+export const PaperId = () => {
+    var paper = searchedPaper();
+    var paperId = paper["paper_id"];
+    return (paperId);
+};
+
+export const PaperLink = () => {
+    var paper = searchedPaper();
+    var paperLink = paper["link"];
+    return (paperLink);
+};
+
 
