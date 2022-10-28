@@ -11,7 +11,7 @@
   .read-paper,
   .account,
   .personal-info,
-  .subscribe,
+  .subscriptions,
   .saved-papers {
     display: flex;
     height: 90vh;
@@ -87,7 +87,7 @@
     font-size: 90px;
   }
 
-  .subscribe {
+  .subscriptions {
     background-image: url('/public/images/img-4.jpg');
     background-position: center;
     background-size: cover;

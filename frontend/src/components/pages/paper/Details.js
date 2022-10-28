@@ -3,9 +3,13 @@
 import React from 'react';
 import '../../../App.css';
 import './Details.css';
+<<<<<<< Updated upstream
 import { Link } from 'react-router-dom';
 //import { TiBookmark } from "react-icons/ti";
 import {PaperTitle, PaperAuthors, PaperDate, PaperSummary, PaperId, PaperLink, PaperCategories} from './PaperDetails';
+=======
+import {PaperTitle, PaperAuthors, PaperDate, PaperSummary, PaperId, PaperLink} from './PaperDetails';
+>>>>>>> Stashed changes
 
 
 
