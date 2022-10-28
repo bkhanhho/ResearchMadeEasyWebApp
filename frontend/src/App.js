@@ -7,14 +7,16 @@ import Main from './components/pages/Main';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Details from './components/pages/paper/Details';
+import Detail from './components/pages/paper/Detail';
 import Related from './components/pages/paper/Related';
 import Read from './components/pages/paper/Read';
 
-import Account from './components/pages/user/Account';
-import PInfo from './components/pages/user/PInfo';
-import Subscriptions from './components/pages/user/Subscriptions';
-import SPapers from './components/pages/user/SPapers';
-import SignUp from './components/pages/user/SignUp';
+import Account from './components/pages/user/account/Account';
+import PInfo from './components/pages/user/account/PInfo';
+import Subscriptions from './components/pages/user/account/Subscriptions';
+import SPapers from './components/pages/user/account/SPapers';
+// import SignUp from './components/pages/user/signup-login/SignUp';
+import Form from './components/pages/user/signup-login/Form';
 
 function App() {
   return (
@@ -24,13 +26,14 @@ function App() {
         <Switch>
           <Route path='/' exact component={Main} />
           <Route path='/details' component={Details} /> 
+          <Route path='/detail' component={Detail} />
           <Route path='/related-papers' component={Related} />
           <Route path='/read-paper' component={Read} />
           <Route path='/account' component={Account} />
           <Route path='/personal-info' component={PInfo} />
           <Route path='/subscribe' component={Subscriptions} />
           <Route path='/saved-papers' component={SPapers} />
-          <Route path='/sign-up' component={SignUp} />
+          <Route path='/sign-up' component={Form} />
         </Switch>
       </Router>
     </>

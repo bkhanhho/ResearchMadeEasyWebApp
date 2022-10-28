@@ -13,39 +13,39 @@ function Cards() {
           <ul className='cards__items'>
             <CardItem
               src='images/img-home.jpg'
-              text='Paper Title 1'
+              text='Random Paper Title for Artificial Intelligence'
               label='Random Paper'
-              path='/main'
+              path='/details'
             />
             <CardItem
               src='images/img.jpg'
-              text='Paper Title 2'
+              text='Random Paper Title for Computer Vision and Pattern Recognition'
               label='Random Paper'
-              path='/main'
+              path='/detail'
             />
             <CardItem
               src='images/img-1.jpg'
-              text='Paper Title 3'
+              text='Random Paper Title for Parallel Processing'
               label='Random Paper'
               path='/main'
             />
           </ul>
           <ul className='cards__items'>
             <CardItem
-              src='images/img-2.jpg'
-              text='Paper Title 4'
+              src='images/img-7.jpg'
+              text='Random Paper Title for Artificial Intelligence'
               label='Random Paper'
               path='/details'
             />
             <CardItem
               src='images/img-3.jpg'
-              text='Paper Title 5'
+              text='Random Paper Title for Computer Vision and Pattern Recognition'
               label='Random Paper'
-              path='/details'
+              path='/detail'
             />
             <CardItem
               src='images/img-4.jpg'
-              text='Paper Title 6'
+              text='Random Paper Title for Parallel Processing'
               label='Random Paper'
               path='/details'
             />

@@ -13,7 +13,7 @@ function getPaperResponse() {
 //TODO: replace 0 with the correct index of paper from response
 function searchedPaper() {
     var jsonObj = getPaperResponse();
-    var paper = jsonObj["hits"]["hits"][0]["_source"];
+    var paper = jsonObj["hits"]["hits"][1]["_source"];
     return paper;
 }
 
