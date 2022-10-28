@@ -15,13 +15,13 @@ function Cards() {
               src='images/img-home.jpg'
               text='Random Paper Title for Artificial Intelligence'
               label='Random Paper'
-              path='/main'
+              path='/details'
             />
             <CardItem
               src='images/img.jpg'
               text='Random Paper Title for Computer Vision and Pattern Recognition'
               label='Random Paper'
-              path='/main'
+              path='/detail'
             />
             <CardItem
               src='images/img-1.jpg'
@@ -41,7 +41,7 @@ function Cards() {
               src='images/img-3.jpg'
               text='Random Paper Title for Computer Vision and Pattern Recognition'
               label='Random Paper'
-              path='/details'
+              path='/detail'
             />
             <CardItem
               src='images/img-4.jpg'
