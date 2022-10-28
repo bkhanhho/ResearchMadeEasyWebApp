@@ -15,21 +15,13 @@ function Cards() {
               src='images/img-home.jpg'
               text='Random Paper Title for Artificial Intelligence'
               label='Random Paper'
-<<<<<<< Updated upstream
-              path='/details'
-=======
               path='/'
->>>>>>> Stashed changes
             />
             <CardItem
               src='images/img.jpg'
               text='Random Paper Title for Computer Vision and Pattern Recognition'
               label='Random Paper'
-<<<<<<< Updated upstream
-              path='/detail'
-=======
               path='/'
->>>>>>> Stashed changes
             />
             <CardItem
               src='images/img-1.jpg'
