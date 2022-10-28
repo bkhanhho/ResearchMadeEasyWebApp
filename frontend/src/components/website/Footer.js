@@ -10,9 +10,9 @@ function Footer() {
         <p className='footer-subscription-heading'>
           Learn more in less time.
         </p>
-        <p className='footer-subscription-text'>
+        {/* <p className='footer-subscription-text'>
           You can unsubscribe at any time.
-        </p>
+        </p> */}
         <div className='input-areas'>
           <form>
             <input
@@ -21,7 +21,7 @@ function Footer() {
               type='email'
               placeholder='Your Email'
             />
-            <Button buttonStyle='btn--outline'>Subscribe</Button>
+            <Button buttonStyle='btn--outline'>SIGN UP</Button>
           </form>
         </div>
       </section>

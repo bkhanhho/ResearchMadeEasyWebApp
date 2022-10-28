@@ -31,7 +31,7 @@ function App() {
           <Route path='/read-paper' component={Read} />
           <Route path='/account' component={Account} />
           <Route path='/personal-info' component={PInfo} />
-          <Route path='/subscribe' component={Subscriptions} />
+          <Route path='/subscriptions' component={Subscriptions} />
           <Route path='/saved-papers' component={SPapers} />
           <Route path='/sign-up' component={Form} />
         </Switch>

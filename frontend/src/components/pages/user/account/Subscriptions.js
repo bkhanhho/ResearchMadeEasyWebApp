@@ -7,7 +7,7 @@ import Footer from '../../../website/Footer';
 export default function Subscriptions() {
   return (
     <div>
-      <h1 className='subscribe'>SUBSCRIBE</h1>;
+      <h1 className='subscriptions'>SUBSCRIPTIONS</h1>;
       <Footer />
     </div>
   );

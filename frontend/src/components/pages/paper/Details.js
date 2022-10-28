@@ -9,6 +9,7 @@ import {PaperTitle, PaperAuthors, PaperDate, PaperSummary, PaperId, PaperLink, P
 
 
 
+
 function displayListOfAuthors(authors) {
   var authorList = "";
   for (let i = 0; i < authors.length; i++) {
