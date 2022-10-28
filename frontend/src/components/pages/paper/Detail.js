@@ -45,7 +45,7 @@ export default function Details() {
     <div className='details'>
         <h1> {title}<br /><br /></h1>
         <div className='read-paper-link'>
-          <p align="right"><a href= {link}> Read Paper </a></p>
+          <p align="right"><a href= {link} target="_blank"> Read Paper </a></p>
         </div>
         {/* <p align="right"><a href= {link}> Read Paper </a></p> */}
         <p align="center" style={{color: 'gray'}}> {displayListOfAuthors(authors)} - {date["year"]} - {displayListOfCategories(categories)} <br /></p>
