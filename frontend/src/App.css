@@ -11,7 +11,7 @@
   .read-paper,
   .account,
   .personal-info,
-  .subscribe,
+  .subscriptions,
   .saved-papers {
     display: flex;
     height: 90vh;
@@ -19,7 +19,24 @@
     justify-content: center;
     font-size: 3rem;
   }
+
+  .box-container {
+    margin: 50px auto;
+    width: 1000px;
+    position: relative;
+    border-radius: 10px;
+    height: 600px;
+    inline-size: 900px;
+    overflow-wrap: break-word;
+  }
   
+  .read-paper-link {
+    margin: 20px auto;
+    position: right;
+    width: 80px;
+    border-radius: 1000px;
+    height: 20px;
+  }
   /* .details {
     display: flex;
     height: 90vh;
@@ -70,7 +87,7 @@
     font-size: 90px;
   }
 
-  .subscribe {
+  .subscriptions {
     background-image: url('/public/images/img-4.jpg');
     background-position: center;
     background-size: cover;

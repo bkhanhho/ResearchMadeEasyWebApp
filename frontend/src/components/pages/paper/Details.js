@@ -9,6 +9,7 @@ import {PaperTitle, PaperAuthors, PaperDate, PaperSummary, PaperId, PaperLink, P
 
 
 
+
 function displayListOfAuthors(authors) {
   var authorList = "";
   for (let i = 0; i < authors.length; i++) {
@@ -44,12 +45,17 @@ export default function Details() {
   return (
     <div className='details'>
         <h1> {title}<br /><br /></h1>
-        <p align="right"><a href= {link}> Read Paper </a></p>
-        <p> {displayListOfAuthors(authors)} - {date["year"]} - {displayListOfCategories(categories)} <br /></p>
-        <h3> Paper Summary </h3>
-        <p>{summary}</p>
-        
+        <div className='read-paper-link'>
+          <p align="right"><a href= {link} target="_blank"> Read Paper </a></p>
+        </div>
+        {/* <p align="right"><a href= {link}> Read Paper </a></p> */}
+        <p align="center" style={{color: 'gray'}}> {displayListOfAuthors(authors)} - {date["year"]} - {displayListOfCategories(categories)} <br /></p>
+        <div className='box-container'>
+          <h3> Paper Summary </h3>
+          <p> {summary} </p>
+        </div>
     </div>
+    
     );
 
 }
