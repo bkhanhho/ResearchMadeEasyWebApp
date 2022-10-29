@@ -3,11 +3,15 @@
 import React from 'react';
 import '../../../../App.css';
 import Footer from '../../../website/Footer';
+import Account from './Account';
 
 export default function Subscriptions() {
   return (
     <div>
-      <h1 className='subscribe'>SUBSCRIBE</h1>;
+      <Account />
+      <div>
+        <h1>Subscriptions</h1>
+      </div>
       <Footer />
     </div>
   );

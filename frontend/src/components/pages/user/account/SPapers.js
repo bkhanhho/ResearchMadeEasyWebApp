@@ -3,11 +3,15 @@
 import React from 'react';
 import '../../../../App.css';
 import Footer from '../../../website/Footer';
+import Account from './Account';
 
 export default function SPapers() {
   return (
     <div>
-      <h1 className='saved-papers'>SAVED PAPERS</h1>;
+      <Account />
+      <div>
+        <h1>Saved Papers</h1>
+      </div>
       <Footer />
     </div>
   );

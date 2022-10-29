@@ -3,11 +3,15 @@
 import React from 'react';
 import '../../../../App.css';
 import Footer from '../../../website/Footer';
+import Account from './Account';
 
 export default function PInfo() {
   return (
     <div>
-      <h1 className='personal-info'>PERSONAL INFO</h1>;
+      <Account />
+      <div>
+        <h1>Personal Information</h1>
+      </div>
       <Footer />
     </div>
   );
