@@ -15,16 +15,11 @@ export default function PInfo() {
       </div>
       <div className="info-container">
         <div classname="info">
-          <h2 className="header2">First Name: </h2>
-          <h2 className="header2">Last Name:  </h2>
-          <h2 className="header2">Email: </h2>
+          <h2 className="header2">First Name: JOHN</h2>
+          <h2 className="header2">Last Name:  DOE</h2>
+          <h2 className="header2">Email: JOHN.DOE@TTU</h2>
         </div>
       </div>
-      <div className="info-container-right">
-          <h2 className="header3">JOHN</h2>
-          <h2 className="header3">DOE</h2>
-          <h2 className="header3">JOHN.DOE@TTU</h2>
-        </div>
       <Footer />
     </div>
   );
