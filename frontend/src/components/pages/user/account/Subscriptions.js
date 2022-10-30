@@ -4,6 +4,7 @@ import React from 'react';
 import '../../../../App.css';
 import Footer from '../../../website/Footer';
 import Account from './Account';
+import CardsSub from './CardsSub'
 
 export default function Subscriptions() {
   return (
@@ -14,9 +15,7 @@ export default function Subscriptions() {
       </div>
       <div className="info-container">
         <div classname="info">
-          <h2 className="header2">First Name: </h2>
-          <h2 className="header2">Last Name: </h2>
-          <h2 className="header2">Email: </h2>
+          <CardsSub />
         </div>
       </div>
       <Footer />

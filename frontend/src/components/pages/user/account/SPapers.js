@@ -4,8 +4,7 @@ import React from 'react';
 import '../../../../App.css';
 import Footer from '../../../website/Footer';
 import Account from './Account';
-import savedPapers from './savedPapers';
-import './savedPapers.css';
+import Cards from './Cards';
 import './InfoLayout.css'
 
 export default function SPapers() {
@@ -17,7 +16,7 @@ export default function SPapers() {
       </div>
       <div className="info-container">
         <div classname="info">
-          <savedPapers />
+          <Cards />
         </div>
       </div>
       <Footer />
