@@ -10,7 +10,14 @@ export default function Subscriptions() {
     <div>
       <Account />
       <div>
-        <h1>Subscriptions</h1>
+        <div className="header1">Subscriptions</div>
+      </div>
+      <div className="info-container">
+        <div classname="info">
+          <h2 className="header2">First Name: </h2>
+          <h2 className="header2">Last Name: </h2>
+          <h2 className="header2">Email: </h2>
+        </div>
       </div>
       <Footer />
     </div>
