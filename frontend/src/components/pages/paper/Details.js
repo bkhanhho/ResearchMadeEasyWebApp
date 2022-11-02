@@ -1,10 +1,12 @@
 /* Display details of paper. */
 
-import React from 'react';
+import React, { useState } from 'react';
 import '../../../App.css';
 import './Details.css';
 import { Link } from 'react-router-dom';
-//import { TiBookmark } from "react-icons/ti";
+import { TiBookmark, TiHeartOutline, TiHeart} from "react-icons/ti";
+import {RiBookmarkLine, RiBookmarkFill} from "react-icons/ri"
+import { IconContext } from "react-icons";
 import {PaperTitle, PaperAuthors, PaperDate, PaperSummary, PaperId, PaperLink, PaperCategories} from './PaperDetails';
 
 
@@ -34,6 +36,41 @@ function displayListOfCategories(categories) {
   return authorCategories;
 }
 
+// const BookmarkLine = () => {
+//   return (
+//     <IconContext.Provider
+//       value={{style: { color: '#4b5961', fontSize: '40px' }}}
+//     >
+      
+//     <RiBookmarkLine/>
+     
+//     </IconContext.Provider>
+//   );
+// }
+// const BookmarkFill = () => {
+//   return (
+//     <IconContext.Provider
+//       value={{style: { color: '#27B0FF', fontSize: '40px' }}}
+//     >
+      
+//     <RiBookmarkFill />
+     
+//     </IconContext.Provider>
+//   );
+// }
+
+
+
+// function changeIcon(anchor) {
+//   var icon = anchor.querySelector("i");
+//   icon.classList.toggle('ri-bookmarkline');
+//   icon.classList.toggle('ri-bookmarkfill');
+
+//    anchor.querySelector("span").textContent = icon.classList.contains('ri-bookmarkline') ? "Read more" : "Read less";
+// }
+
+
+//ASSUMPTION: user clicks save and do not unclick. Once a paper is saved, users do not remove it from the saved paper list
 export default function Details() {
   var title = PaperTitle();
   var authors = PaperAuthors();
@@ -41,10 +78,40 @@ export default function Details() {
   var summary = PaperSummary();
   var link = PaperLink();
   var categories = PaperCategories();
+  var id = PaperId();
 
+
+  const [style, setStyle] = useState("cont");
+  const savePaper = () => {
+    alert("You saved this paper!");
+  };
+
+
+  const addPaperToSavedList = () => { //TODO: send paper id to list
+    
+  }
+  let changeIcon = function(icon) { //TODO: change bookmark
+    icon.classList.toggle('fa-times')
+  }
   return (
     <div className='details'>
-        <h1> {title}<br /><br /></h1>
+      <h1> {title} <span style={{ color: '#27B0FF', fontSize: '40px' }} onClick={() => {
+          savePaper();
+          addPaperToSavedList();
+        }}
+        >
+          {/* {changeIcon()}</span></h1> */}
+          
+          <TiBookmark /></span></h1>
+      
+      {/* <p>TEST <span ><i onClick={() => {myFunction(this)}} className="ri ri-bookmark-line"> </i></span></p> */}
+      
+
+
+      {/* <p> {Bookmark()} </p> */}
+        {/* <h1> {title} <TiBookmark className='bookmark-icon'/><br /><br /></h1> */}
+        {/* <p align="right"><TiBookmark style={{color: 'teal', fontSize: '50px'}}/></p> */}
+        {/* <p align="center"><a href= '/saved-papers'> Bookmark Icon </a></p> */}
         <div className='read-paper-link'>
           <p align="right"><a href= {link} target="_blank"> Read Paper </a></p>
         </div>
@@ -60,33 +127,4 @@ export default function Details() {
 
 }
 
-// const STYLES = ['btn--primary', 'btn--outline', 'btn--test'];
-
-// const SIZES = ['btn--medium', 'btn--large'];
-
-// export const DetailsBookmark = ({
-//   children,
-//   type,
-//   onClick,
-//   buttonStyle,
-//   buttonSize
-// }) => {
-//   const checkButtonStyle = STYLES.includes(buttonStyle)
-//     ? buttonStyle
-//     : STYLES[0];
-
-//   const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
-
-//   return (
-//     <Link to='/sign-up' className='btn-mobile'> 
-//       <button
-//         className={`btn ${checkButtonStyle} ${checkButtonSize}`}
-//         onClick={onClick}
-//         type={type}
-//       >
-//         {children}
-//       </button>
-//     </Link>
-//   );
-// };
 
