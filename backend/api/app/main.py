@@ -1,10 +1,19 @@
+from constants import openai_key, es_cloud_id, es_auth_pw, es_auth_user, es_index, categories
 from typing import Union
 
 from fastapi import FastAPI
 import fastapi
 from requests import Response
+from elasticsearch import Elasticsearch
 
 app = FastAPI()
+
+
+# Connect to 'http://localhost:9200'
+es_client = Elasticsearch(
+    cloud_id=es_cloud_id,
+    basic_auth=(es_auth_user, es_auth_pw)
+)
 
 
 @app.get("/")
@@ -24,13 +33,15 @@ def get_paper(paper_id: str):
 
 
 @app.get("/bookmark/{user_id}", status_code=fastapi.status.HTTP_200_OK)
-def get_saved_papers(user_id: str, response: fastapi.Response):
+async def get_saved_papers(user_id: str, response: fastapi.Response):
     # todo call the db to get a paper's info
     return {"Not implemented"}
+
 
 @app.post("/bookmark/{user_id}", status_code=fastapi.status.HTTP_201_CREATED)
 def add_saved_paper(user_id: str, paper_id: Union[str, None], response: fastapi.Response):
     return {"Not implemented"}
+
 
 @app.get("/search", status_code=fastapi.status.HTTP_200_OK)
 def search_elastic(searchQuery: Union[str, None], response: fastapi.Response, first_index: int = 0, final_index: int = 10):
@@ -40,6 +51,21 @@ def search_elastic(searchQuery: Union[str, None], response: fastapi.Response, fi
     if searchQuery.strip() == "":
         response.status_code = fastapi.status.HTTP_400_BAD_REQUEST
         return {"stop sending empty space"}
+    # ? todo move to async search
+    resp = es_client.search(index=es_index
+, body={
+        "query": {
+            "bool": {
+                "should": [{"match": {"title": searchQuery}}, {"match":{ "full_paper": searchQuery}}]
+            }
+        }
+    })
+    return resp
+
+    # print("Got %d Hits:" % resp['hits']['total']['value'])
+    # for hit in resp['hits']['hits']:
+    #     print("%(timestamp)s %(author)s: %(text)s" % hit["_source"])
+
     return {
         "took": 5,
         "timed_out": False,
