@@ -19,7 +19,23 @@
     justify-content: center;
     font-size: 3rem;
   }
-
+  
+.fa {
+  color: #27B0FF;
+  font-size: 40px;
+  cursor: pointer;
+}
+  .bookmark-icon {
+    color: #4b5961; 
+    position: relative;
+    /* value={{style: { color: '#27B0FF', fontSize: '40px' }}} */
+    font-size: 40px;
+  }
+  .bookmark-icon.fill {
+    color: #27B0FF; 
+    /* value={{style: { color: '#27B0FF', fontSize: '40px' }}} */
+    font-size: 40px;
+  }
   .box-container {
     margin: 50px auto;
     width: 1000px;
