@@ -1,0 +1,161 @@
+/* The sidebar menu */
+.side {
+    padding: 2em;
+    height: 0px;
+    display: grid;
+    justify-content: left;
+    position: relative;
+    font-size: 1.2rem;
+    z-index: 0;
+  }
+  
+  .side-container {
+    background-color: rgb(26, 23, 23);
+    border-color: aqua;
+    display: grid;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+    padding: 1rem;
+    padding-top: 7em;
+    padding-bottom: 9em;
+    height: auto;
+    max-width: 1500px;
+  }
+  
+  .side-logo {
+    color: #fff;
+    justify-self: start;
+    margin-left: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .side-menu {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    list-style: none;
+    text-align: center;
+    width: 60vw;
+    justify-content: end;
+    margin-right: 2rem;
+  }
+  
+  .side-item {
+    height: 40px;
+  }
+  
+  .side-links {
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 3rem 1rem;
+    height: 100%;
+    border-color: aqua;
+    z-index: 999;
+  }
+  
+  .side-links:hover {
+    border-bottom: 4px solid #fff;
+    transition: all 0.2s ease-out;
+  }
+  
+  .faa-bars {
+    color: #fff;
+  }
+  
+  .side-links-mobile {
+    display: none;
+  }
+  
+  .smenu-icon {
+    display: none;
+  }
+  
+  @media screen and (max-width: 960px) {
+    .sideItems {
+      position: relative;
+    }
+  
+    .side-menu {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 90vh;
+      position: absolute;
+      top: 80px;
+      left: -100%;
+      opacity: 1;
+      transition: all 0.5s ease;
+    }
+  
+    .side-menu.active {
+      background: #242222;
+      left: 0;
+      opacity: 1;
+      transition: all 0.5s ease;
+      z-index: 1;
+    }
+  
+    .side-links {
+      text-align: center;
+      padding: 2rem;
+      width: 100%;
+      display: table;
+    }
+  
+    .side-links:hover {
+      background-color: #fff;
+      color: #242424;
+      border-radius: 0;
+    }
+  
+    .side-logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(25%, 50%);
+    }
+  
+    .smenu-icon {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(-100%, 60%);
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+  
+    .faa-times {
+      color: #fff;
+      font-size: 2rem;
+    }
+  
+    .side-links-mobile {
+      display: block;
+      text-align: center;
+      margin: 2rem auto;
+      border-radius: 4px;
+      width: 80%;
+      text-decoration: none;
+      font-size: 1.5rem;
+      background-color: transparent;
+      color: #fff;
+      padding: 14px 20px;
+      border: 1px solid #fff;
+      transition: all 0.3s ease-out;
+    }
+  
+    .side-links-mobile:hover {
+      background: #fff;
+      color: #242424;
+      transition: 250ms;
+    }
+  }
+  

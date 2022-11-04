@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'PT Sans', sans-serif;
+  }
+  
+  .main,
+  /* .details, */
+  .related-papers,
+  .read-paper,
+  .account,
+  .personal-info,
+  .subscriptions,
+  .saved-papers {
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+  }
+  
+.fa {
+  color: #27B0FF;
+  font-size: 40px;
+  cursor: pointer;
+}
+  .bookmark-icon {
+    color: #4b5961; 
+    position: relative;
+    /* value={{style: { color: '#27B0FF', fontSize: '40px' }}} */
+    font-size: 40px;
+  }
+  .bookmark-icon.fill {
+    color: #27B0FF; 
+    /* value={{style: { color: '#27B0FF', fontSize: '40px' }}} */
+    font-size: 40px;
+  }
+  .box-container {
+    margin: 50px auto;
+    width: 1000px;
+    position: relative;
+    border-radius: 10px;
+    height: 600px;
+    inline-size: 900px;
+    overflow-wrap: break-word;
+  }
+  
+  .read-paper-link {
+    margin: 20px auto;
+    position: right;
+    width: 80px;
+    border-radius: 1000px;
+    height: 20px;
+  }
+  /* .details {
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background-image: url('/public/images/img-home.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #000000;
+    font-size: 100px;
+  } */
+  
+  .related-papers {
+    background-image: url('/public/images/img.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-size: 90px;
+  }
+  
+  .read-paper {
+    background-image: url('/public/images/img-1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-size: 90px;
+  }
+
+  .account {
+    background-image: url('/public/images/img-2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-size: 90px;
+  }
+
+  .personal-info {
+    background-image: url('/public/images/img-3.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-size: 90px;
+  }
+
+  .subscriptions {
+    background-image: url('/public/images/img-4.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-size: 90px;
+  }
+
+  .saved-papers {
+    background-image: url('/public/images/img-5.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-size: 90px;
+  }
+
+  /* .sign-up {
+    background-image: url('/public/images/img-6.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-size: 90px;
+  } */
