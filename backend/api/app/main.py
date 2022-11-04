@@ -1,4 +1,4 @@
-from constants import openai_key, es_cloud_id, es_auth_pw, es_auth_user, es_index, categories
+from constants import es_cloud_id, es_auth_pw, es_auth_user, es_index
 from typing import Union
 
 from fastapi import FastAPI
@@ -54,6 +54,9 @@ def search_elastic(searchQuery: Union[str, None], response: fastapi.Response, fi
     # ? todo move to async search
     resp = es_client.search(index=es_index
 , body={
+    "_source": {
+        "excludes": [ "full_paper" ]
+    },
         "query": {
             "bool": {
                 "should": [{"match": {"title": searchQuery}}, {"match":{ "full_paper": searchQuery}}]
