@@ -41,7 +41,9 @@
                         }
                     ],
                     "paper_id": "2209.15635",
-                    "summary": "One or two sentences",
+
+                    "summary": "Vertical federated learning is a new way of learning that is expected to improve advertising models by enabling the joint learning of complementary user attributes privately owned by the advertiser and the publisher. However, there are some limitations to its application to advertising systems. In this paper, we advocate a new method.",
+
                     "category": ["Artificial Intelligence"]
                 }
             },
@@ -75,7 +77,9 @@
                         }
                     ],
                     "paper_id": "1801.01671",
-                    "summary": "One or two sentences",
+
+                    "summary": "The FOTS framework is a system that can detect and recognize all of the words in a natural scene image. It consists of four parts: shared convolutions, the text detection branch, the RoIRotate operation, and the text recognition branch.",
+
                     "category": ["Computer Vision and Pattern Recognition"]
                 }
             }
