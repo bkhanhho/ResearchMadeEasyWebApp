@@ -10,99 +10,99 @@ import {
 } from "firebase/auth";
 import { auth } from "./firebase-config";
 
-function Login() {
-  const [registerEmail, setRegisterEmail] = useState("");
-  const [registerPassword, setRegisterPassword] = useState("");
-  const [loginEmail, setLoginEmail] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
+// function Login() {
+//   const [registerEmail, setRegisterEmail] = useState("");
+//   const [registerPassword, setRegisterPassword] = useState("");
+//   const [loginEmail, setLoginEmail] = useState("");
+//   const [loginPassword, setLoginPassword] = useState("");
 
-  const [user, setUser] = useState({});
+//   const [user, setUser] = useState({});
 
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
+//   onAuthStateChanged(auth, (currentUser) => {
+//     setUser(currentUser);
+//   });
 
-  const register = async () => {
-    try {
-      const user = await createUserWithEmailAndPassword(
-        auth,
-        registerEmail,
-        registerPassword
-      );
-      console.log(user);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+//   const register = async () => {
+//     try {
+//       const user = await createUserWithEmailAndPassword(
+//         auth,
+//         registerEmail,
+//         registerPassword
+//       );
+//       console.log(user);
+//     } catch (error) {
+//       console.log(error.message);
+//     }
+//   };
 
-  const login = async () => {
-    try {
-      const user = await signInWithEmailAndPassword(
-        auth,
-        loginEmail,
-        loginPassword
-      );
-      console.log(user);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+//   const login = async () => {
+//     try {
+//       const user = await signInWithEmailAndPassword(
+//         auth,
+//         loginEmail,
+//         loginPassword
+//       );
+//       console.log(user);
+//     } catch (error) {
+//       console.log(error.message);
+//     }
+//   };
 
-  const logout = async () => {
-    await signOut(auth);
-  };
+//   const logout = async () => {
+//     await signOut(auth);
+//   };
 
-  return (
-    <div className="login-container">
-      <span className='close-btn'>×</span>
-      <div className='login-content-left'>
+//   return (
+//     <div className="login-container">
+//       <span className='close-btn'>×</span>
+//       <div className='login-content-left'>
     
-      </div>
-      <div className='login-content-right'>
-      <form onSubmit={handleSubmit} className='form' noValidate>
-        <h1>
-          Access your account by filling out the information below.
-        </h1>
-        <div className='login-inputs'>
-          <label className='login-label'>Email</label>
-          <input
-            className='login-input'
-            type='email'
-            name='email'
-            placeholder='Enter Email'
-            // value={values.setLoginEmail}
-            onChange={(event) => {
-            setLoginEmail(event.target.value);
-          }}
-          />
-        </div>
-        <div className='login-inputs'>
-          <label className='login-label'>Password</label>
-          <input
-            className='login-input'
-            type='password'
-            name='password'
-            placeholder='Enter Password'
-            // value={values.setLoginEmail}
-            onChange={(event) => {
-            setLoginPassword(event.target.value);
-          }}
-          />
-        </div>
-        <button className='login-input-btn' type='submit'>
-          Login
-        </button>
-        {/* <button onClick={login}> Login</button> */}
-        <span className='login-input-signup'>
-          Don't already have an account? Sign Up <a href='/sign-up'>HERE</a>
-        </span>
-        </form>
-      </div>
-    </div>
-  );
-}
+//       </div>
+//       <div className='login-content-right'>
+//       <form onSubmit={handleSubmit} className='form' noValidate>
+//         <h1>
+//           Access your account by filling out the information below.
+//         </h1>
+//         <div className='login-inputs'>
+//           <label className='login-label'>Email</label>
+//           <input
+//             className='login-input'
+//             type='email'
+//             name='email'
+//             placeholder='Enter Email'
+//             // value={values.setLoginEmail}
+//             onChange={(event) => {
+//             setLoginEmail(event.target.value);
+//           }}
+//           />
+//         </div>
+//         <div className='login-inputs'>
+//           <label className='login-label'>Password</label>
+//           <input
+//             className='login-input'
+//             type='password'
+//             name='password'
+//             placeholder='Enter Password'
+//             // value={values.setLoginEmail}
+//             onChange={(event) => {
+//             setLoginPassword(event.target.value);
+//           }}
+//           />
+//         </div>
+//         <button className='login-input-btn' type='submit'>
+//           Login
+//         </button>
+//         {/* <button onClick={login}> Login</button> */}
+//         <span className='login-input-signup'>
+//           Don't already have an account? Sign Up <a href='/sign-up'>HERE</a>
+//         </span>
+//         </form>
+//       </div>
+//     </div>
+//   );
+// }
 
-export default Login;
+// export default Login;
 
 
 /*<div className='form-content-right'>

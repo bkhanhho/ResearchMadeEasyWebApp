@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import '../../../App.css';
 import './Details.css';
 import { Link } from 'react-router-dom';
-//import { TiBookmark } from "react-icons/ti";
-import {PaperTitle, PaperAuthors, PaperDate, PaperSummary, PaperId, PaperLink} from './PaperDetails';
+import { TiBookmark } from "react-icons/ti";
+import {PaperTitle, PaperAuthors, PaperDate, PaperSummary, PaperCategories, PaperId, PaperLink} from './PaperDetails';
 
 
 
