@@ -1,4 +1,8 @@
-/* Install react-router-dom@5.2.0 to compile. */
+/* Install:
+  - npm
+  - react-router-dom@5.2.0 
+  - firebase
+to compile. */
 
 import React from 'react';
 import Navbar from './components/website/Navbar';
@@ -15,8 +19,8 @@ import Account from './components/pages/user/account/Account';
 import PInfo from './components/pages/user/account/PInfo';
 import Subscriptions from './components/pages/user/account/Subscriptions';
 import SPapers from './components/pages/user/account/SPapers';
-// import SignUp from './components/pages/user/signup-login/SignUp';
-import Form from './components/pages/user/signup-login/Form';
+import FormL from './components/pages/user/signup-login/FormL';
+import FormS from './components/pages/user/signup-login/FormS';
 
 function App() {
   return (
@@ -33,7 +37,8 @@ function App() {
           <Route path='/personal-info' component={PInfo} />
           <Route path='/subscriptions' component={Subscriptions} />
           <Route path='/saved-papers' component={SPapers} />
-          <Route path='/sign-up' component={Form} />
+          <Route path='/login' component={FormL} />
+          <Route path='/sign-up' component={FormS} />
         </Switch>
       </Router>
     </>
