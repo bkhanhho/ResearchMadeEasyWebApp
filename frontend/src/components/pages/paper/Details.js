@@ -4,11 +4,8 @@ import React, { useState } from 'react';
 import '../../../App.css';
 import './Details.css';
 import { Link } from 'react-router-dom';
-import { TiBookmark, TiHeartOutline, TiHeart} from "react-icons/ti";
-import {RiBookmarkLine, RiBookmarkFill} from "react-icons/ri"
-import { IconContext } from "react-icons";
-import {PaperTitle, PaperAuthors, PaperDate, PaperSummary, PaperId, PaperLink, PaperCategories} from './PaperDetails';
-
+//import { TiBookmark } from "react-icons/ti";
+import {PaperTitle, PaperAuthors, PaperDate, PaperSummary, PaperId, PaperLink} from './PaperDetails';
 
 
 
