@@ -9,8 +9,17 @@ import CardsSub from './CardsSub'
 export default function Subscriptions() {
   return (
     <div>
-      <h1 className='subscribe'>SUBSCRIBE</h1>;
-      <Footer />
+      <Account />
+      <div>
+        <div className="header1">Subscriptions</div>
+      </div>
+      <div className="info-container">
+        <div classname="info">
+          <CardsSub />
+        </div>
+      </div>
+      {/* <Footer /> */}
     </div>
   );
 }
+
