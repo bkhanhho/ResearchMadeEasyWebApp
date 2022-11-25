@@ -1,6 +1,6 @@
 /* Display details of paper. */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../../App.css';
 import './Details.css';
 import { Link } from 'react-router-dom';
@@ -10,28 +10,28 @@ import {PaperTitle, PaperAuthors, PaperDate, PaperSummary, PaperCategories, Pape
 
 
 function displayListOfAuthors(authors) {
-  var authorList = "";
-  for (let i = 0; i < authors.length; i++) {
-    authorList += authors[i]["name"];
-    if (i < authors.length - 1) {
-      authorList += ", ";
-    }
-  }
+  var authorList = authors; //"";
+  // for (let i = 0; i < authors.length; i++) {
+  //   authorList += authors[i]["name"];
+  //   if (i < authors.length - 1) {
+  //     authorList += ", ";
+  //   }
+  // }
   //console.log(authorList);
   return authorList;
 
 }
 
-function displayListOfCategories(categories) {
-  var authorCategories = "";
-  for (let i = 0; i < categories.length; i++) {
-    authorCategories += categories[i];
-    if (i < categories.length - 1) {
-      authorCategories += ", ";
-    }
-  }
-  return authorCategories;
-}
+// function displayListOfCategories(categories) {
+//   var authorCategories = "";
+//   for (let i = 0; i < categories.length; i++) {
+//     authorCategories += categories[i];
+//     if (i < categories.length - 1) {
+//       authorCategories += ", ";
+//     }
+//   }
+//   return authorCategories;
+// }
 
 // const BookmarkLine = () => {
 //   return (
@@ -67,6 +67,7 @@ function displayListOfCategories(categories) {
 // }
 
 
+
 //ASSUMPTION: user clicks save and do not unclick. Once a paper is saved, users do not remove it from the saved paper list
 export default function Details() {
   var title = PaperTitle();
@@ -76,6 +77,14 @@ export default function Details() {
   var link = PaperLink();
   var categories = PaperCategories();
   var id = PaperId();
+
+console.log("title is: ", title);
+console.log("category is: ", categories);
+console.log("date is: ", date);
+console.log("summary is: ", summary);
+
+  // const [data, setData] = useState([]);
+  // useEffect(()=>fetch('http://127.0.0.1:8000/search?searchQuery=vertical').then(data=>data.json()).then(result=>setData(result["hits"]["hits"][0]["_source"])));
 
 
   const [style, setStyle] = useState("cont");
@@ -90,6 +99,8 @@ export default function Details() {
   let changeIcon = function(icon) { //TODO: change bookmark
     icon.classList.toggle('fa-times')
   }
+
+
   return (
     <div className='details'>
       <h1> {title} <span style={{ color: '#27B0FF', fontSize: '40px' }} onClick={() => {
@@ -111,13 +122,17 @@ export default function Details() {
         {/* <p align="center"><a href= '/saved-papers'> Bookmark Icon </a></p> */}
         <div className='read-paper-link'>
           <p align="right"><a href= {link} target="_blank"> Read Paper </a></p>
+          {/* <p>{data.text}</p> */}
         </div>
         {/* <p align="right"><a href= {link}> Read Paper </a></p> */}
-        <p align="center" style={{color: 'gray'}}> {displayListOfAuthors(authors)} - {date["year"]} - {displayListOfCategories(categories)} <br /></p>
+        <p align="center" style={{color: 'gray'}}>   - {date} - {categories} <br /></p>
         <div className='box-container'>
           <h3> Paper Summary </h3>
           <p> {summary} </p>
         </div>
+        {/* <div>
+          {Component()}
+        </div> */}
     </div>
     
     );
@@ -125,3 +140,4 @@ export default function Details() {
 }
 
 
+//{displayListOfAuthors(authors)}

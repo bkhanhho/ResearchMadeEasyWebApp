@@ -9,7 +9,7 @@ const initialDetails = [
       imgPath: "/assets/img/1.png",
       name: PaperTitle(), //"Vertical Semi-Federated Learning for Efficient Online Advertising",
       authors: PaperAuthors(), //["Wenjie Li", "Qiaolin Xia", "Hao Cheng", "Kouyin Xue", "Shu-Tao Xia"],
-      year: PaperDate()["year"],
+      year: PaperDate(),
     },
     {
       id: 2,
