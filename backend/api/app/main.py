@@ -115,14 +115,21 @@ def add_saved_paper(user_id: str, paper_id: Union[str, None], response: fastapi.
 
 
 @app.get("/search", status_code=fastapi.status.HTTP_200_OK)
-def search_elastic(query: Union[str, None], response: fastapi.Response, first_index: int = 0, final_index: int = 10):
-    if query == None:
+def search_elastic(query: Union[str, None], response: fastapi.Response, start: int = 0, size: int = 10):
+    if query == None or query.strip() == "":
         response.status_code = fastapi.status.HTTP_400_BAD_REQUEST
-        return {"reason": "Try adding a query parameter called searchQuery and giving it a non empty"}
-    if query.strip() == "":
-        response.status_code = fastapi.status.HTTP_400_BAD_REQUEST
-        return {"stop sending empty space"}
-    # ? todo move to async search
-    es_client = ElasticsearchResMe()
+        return {"reason": "Try adding the query parameter and giving it a non empty"}
+
+    es_client = ElasticsearchResMe(start, size)
     resp = es_client.search(query)
+    return resp
+
+@app.get("/autosuggest/{input}", status_code=fastapi.status.HTTP_200_OK)
+def search_elastic(input: str, response: fastapi.Response, start: int = 0, size: int = 10):
+    if input == None or input.strip() == "":
+        response.status_code = fastapi.status.HTTP_400_BAD_REQUEST
+        return {"reason": "Try adding the query parameter and giving it a non empty"}
+
+    es_client = ElasticsearchResMe(start, size)
+    resp = es_client.autosuggest(input)
     return resp
