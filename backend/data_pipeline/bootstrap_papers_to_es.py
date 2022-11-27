@@ -8,6 +8,7 @@ Both main and secondary purposes only need to run once (unless new papers are ad
 '''
 
 import os
+import json
 import openai
 import feedparser
 import urllib.request as openurl
@@ -161,6 +162,7 @@ def create_metadata_dict (arxiv_res, es_doc):
     except KeyError:
         es_doc["category"] = ""
     es_doc["summary"] = get_gtp3_summary(arxiv_res.summary)
+    es_doc["abstract"] = arxiv_res.summary
     es_doc["full_paper"] = get_full_paper(arxiv_res.links[1]['href'])
 
 def get_full_paper (link):
@@ -221,15 +223,18 @@ def get_data_to_ES (file_name):
     total_papers = len(all_paper_codes)
     loop_range = total_papers//papers_separator if total_papers%papers_separator == 0 else total_papers//papers_separator + 1
 
-    for i in range(1,papers_separator):
-        # get a subset of the paper codes in the form of a coma separated string
-        paper_codes = ",".join(all_paper_codes[(i-1)*loop_range:i*loop_range])
-        papers_metadata = call_arXiv(paper_codes)       
-        
-        for j in range(len(papers_metadata.entries)):
-            paper_dict = {}
-            create_metadata_dict(papers_metadata.entries[j], paper_dict)
-            save_to_ES(paper_dict)
+    with open("./semantic_search_dump.json", "w") as semantic_search_dump:
+        for i in range(1,papers_separator):
+            # get a subset of the paper codes in the form of a coma separated string
+            paper_codes = ",".join(all_paper_codes[(i-1)*loop_range:i*loop_range])
+            papers_metadata = call_arXiv(paper_codes)       
+            
+            for j in range(len(papers_metadata.entries)):
+                paper_dict = {}
+                create_metadata_dict(papers_metadata.entries[j], paper_dict)
+
+                json.dump(paper_dict, semantic_search_dump)
+                save_to_ES(paper_dict)
             
 #define_ES_mapping()
 
