@@ -1,37 +1,97 @@
 import React from "react";
-import { TiBookmark } from "react-icons/ti";
-import { IoBookmark, IoBookmarkOutline } from "react-icons/io5";
-import Button from "react-bootstrap/Button";
 import { IconButton } from "@mui/material";
 import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
 import BookmarkOutlinedIcon from "@mui/icons-material/BookmarkOutlined";
 import { useState } from "react";
+import { setDoc, doc, deleteDoc } from "firebase/firestore";
+import { db } from "../../../firebase";
+import { SnackbarProvider, useSnackbar } from "notistack";
 
-function addPaperToSavedList() {}
+function addBookmarkInBackend(paperId, userId) {
+  const bookmarkRef = doc(db, "users", userId, "bookmarks", paperId);
+  const bookmarkData = {};
+  return setDoc(bookmarkRef, bookmarkData)
+    .then(() => {
+      console.log("Document has been added successfully");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
 
-export default function BookmarkButton() {
+function removeBookmarkInBackend(paperId, userId) {
+  const bookmarkRef = doc(db, "users", userId, "bookmarks", paperId);
+  return deleteDoc(bookmarkRef)
+    .then(() => {
+      console.log("Document has been deleted successfully");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+async function syncWithBackend(isBookmarked, paperId, userId) {
+  let backendResponse;
+  if (isBookmarked) {
+    backendResponse = removeBookmarkInBackend(paperId, userId);
+  } else {
+    backendResponse = addBookmarkInBackend(paperId, userId);
+  }
+  return backendResponse;
+}
+
+function updateState(
+  backendResponse,
+  isBookmarked,
+  setIsBookmarked,
+  enqueueSnackbar
+) {
+  backendResponse
+    .then(() => {
+      setIsBookmarked(!isBookmarked);
+      enqueueSnackbar(
+        isBookmarked
+          ? "Paper removed successfully!"
+          : "Paper saved successfully!",
+        { variant: "success" }
+      );
+    })
+    .catch(() => {
+      enqueueSnackbar(
+        isBookmarked
+          ? "Failed to remove bookmark!"
+          : "Failed to save bookmark!",
+        { variant: "error" }
+      );
+    });
+}
+
+export function BookmarkButtonWithoutSnack({ paperId }) {
   const [isBookmarked, setIsBookmarked] = useState(false);
-  const handleClick = () => {
-    setIsBookmarked(!isBookmarked);
+  const { enqueueSnackbar } = useSnackbar();
+
+  const handleClick = async () => {
+    const userId = "khanh@gmail.com";
+    const backendResponse = syncWithBackend(isBookmarked, paperId, userId);
+    updateState(
+      backendResponse,
+      isBookmarked,
+      setIsBookmarked,
+      enqueueSnackbar
+    );
   };
-  var myLambda = () => handleClick();
+
   return (
-    // TODO: move style to css
-    <IconButton aria-label="delete" color="primary" onClick={myLambda}>
+    <IconButton aria-label="delete" color="primary" onClick={handleClick}>
       {isBookmarked ? <BookmarkOutlinedIcon /> : <BookmarkBorderOutlinedIcon />}
     </IconButton>
+  );
+}
 
-    // <BookmarkBorderOutlinedIcon />
-    // <BookmarkOutlinedIcon />
-    // <Button
-    //   style={{ color: "#27B0FF" }}
-    //   onClick={() => {
-    //     savePaper();
-    //     addPaperToSavedList();
-    //   }}
-    // >
-    //   {/**TODO: how to use button with icon */}
-    //   <IoBookmark />
-    // </Button>
+export default function BookmarkButton({ paperId }) {
+  return (
+    <SnackbarProvider maxSnack={3}>
+      <BookmarkButtonWithoutSnack paperId={paperId} />
+    </SnackbarProvider>
   );
 }
