@@ -9,6 +9,52 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from es_client import ElasticsearchResMe
 
+# related papers
+import json
+import os
+from sentence_transformers import SentenceTransformer, util
+
+#First, we load the papers dataset (with title and abstract information)
+dataset_file = 'emnlp2016-2018.json'
+
+if not os.path.exists(dataset_file):
+  util.http_get("https://sbert.net/datasets/emnlp2016-2018.json", dataset_file)
+else:
+    print("File already downlaoded")
+
+with open(dataset_file) as fIn:
+  papers = json.load(fIn)
+
+print(len(papers), "papers loaded")
+
+#We then load the allenai-specter model with SentenceTransformers
+model = SentenceTransformer('allenai-specter')
+
+#To encode the papers, we must combine the title and the abstracts to a single string
+paper_texts = [paper['title'] + '[SEP]' + paper['abstract'] for paper in papers]
+print("loaded paper_texts")
+#Compute embeddings for all papers
+corpus_embeddings = model.encode(paper_texts, convert_to_tensor=True)
+print("Computed embeddings")
+
+#We define a function, given title & abstract, searches our corpus for relevant (similar) papers
+def search_papers(title, abstract):
+    query_embedding = model.encode(title+'[SEP]'+abstract, convert_to_tensor=True)
+
+    search_hits = util.semantic_search(query_embedding, corpus_embeddings)
+    search_hits = search_hits[0]  #Get the hits for the first query
+
+    print("Paper:", title)
+    print("Most similar papers:")
+    result = []
+    for hit in search_hits:
+        related_paper = papers[hit['corpus_id']]
+        related_paper['score'] = hit['score']
+        result.append(related_paper)
+        print("{:.2f}\t{}\t{} {}".format(hit['score'], related_paper['title'], related_paper['venue'], related_paper['year']))
+    return result
+
+
 app = FastAPI()
 
 origins = [
@@ -46,6 +92,16 @@ def get_paper(paper_id: str):
     # todo call the db to get a paper's info
     return {"not implemented"}
 
+
+@app.get("/related/", status_code=fastapi.status.HTTP_200_OK)
+async def get_related_papers(title: Union[str, None], abstract: Union[str, None], response: fastapi.Response):
+    # todo call the db to get a paper's info
+    if title == None or abstract == None:
+        response.status_code = fastapi.status.HTTP_400_BAD_REQUEST
+        return {"Bad response"}
+    res = search_papers(title=title, abstract=abstract)
+    return {"result": res}
+    # return {"Not implemented"}
 
 @app.get("/bookmark/{user_id}", status_code=fastapi.status.HTTP_200_OK)
 async def get_saved_papers(user_id: str, response: fastapi.Response):
