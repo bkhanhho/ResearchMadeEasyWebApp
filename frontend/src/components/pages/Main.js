@@ -7,7 +7,7 @@ import Footer from '../website/Footer';
 function Main() {
   return (
     <div>
-      <Sbar details={initialDetails}/>
+      <Sbar />
       <Footer />
     </div>
   );

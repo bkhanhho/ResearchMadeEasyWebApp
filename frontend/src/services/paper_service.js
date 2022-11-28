@@ -30,3 +30,19 @@ export async function getRelatedPapers(title, abstract) {
     console.error('getRelatedPapers fetch error: ', err)
   }
 }
+
+export async function searchPapers(query) {
+  try {
+    const url = 'http://127.0.0.1:8000/search?title=' + query;
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Error! status: ${response.status}`);
+    }
+    const result = await response.json();
+    // console.log("successful result is: ", { url }, { result });
+
+    return result.hits.hits;
+  } catch (err) {
+    console.error('getRelatedPapers fetch error: ', err)
+  }
+}

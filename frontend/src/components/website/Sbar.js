@@ -2,39 +2,44 @@ import React, { useState } from 'react';
 import Scroll from './Scroll';
 import SearchList from './SearchList';
 import Cards from './Cards';
+import {searchPapers} from '../../services/paper_service';
 import './Sbar.css';
 
-function Sbar({ details }) {
+function Sbar({  }) {
 
   const [searchField, setSearchField] = useState("");
   const [searchShow, setSearchShow] = useState(false);
 
-  const SearchedPapers = details.filter(
-    paper => {
-      return (
-        paper
-        .name
-        .toLowerCase()
-        .includes(searchField.toLowerCase()) ||
-        paper
-        .author
-        .toLowerCase()
-        .includes(searchField.toLowerCase())
-      );
-    }
-  );
+  const [SearchedPapers, setResults] = useState("")
 
-  const handleChange = e => {
+  // const SearchedPapers = details.filter(
+  //   paper => {
+  //     return (
+  //       paper
+  //       .name
+  //       .toLowerCase()
+  //       .includes(searchField.toLowerCase()) ||
+  //       paper
+  //       .author
+  //       .toLowerCase()
+  //       .includes(searchField.toLowerCase())
+  //     );
+  //   }
+  // );
+
+  const handleChange = async e =>  {
     setSearchField(e.target.value);
     if (e.target.value==="") {
       setSearchShow(false);
     } else {
       setSearchShow(true);
+      const results  = await searchPapers(e.target.value)
+      setResults(results)
     }
   };
 
   function searchList() {
-    if (searchShow) {
+    if (searchShow != "") {
       return (
         <Scroll>
           <SearchList filteredPapers={SearchedPapers} />
