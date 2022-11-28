@@ -18,7 +18,6 @@ import Read from "./components/pages/paper/Read";
 
 import Account from "./components/pages/user/account/Account";
 import PInfo from "./components/pages/user/account/PInfo";
-import Subscriptions from "./components/pages/user/account/Subscriptions";
 import SPapers from "./components/pages/user/account/SPapers";
 import FormL from "./components/pages/user/signup-login/FormL";
 import FormS from "./components/pages/user/signup-login/FormS";
@@ -38,7 +37,6 @@ function App() {
           <Route path="/read-paper" component={Read} />
           <Route path="/account" component={Account} />
           <Route path="/personal-info" component={PInfo} />
-          <Route path="/subscriptions" component={Subscriptions} />
           <Route path="/saved-papers" component={SPapers} />
           <Route path="/saved-papers2" component={SavedPapers} />
           <Route path="/login" component={FormL} />
