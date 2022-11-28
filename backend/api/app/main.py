@@ -78,7 +78,7 @@ es_client = Elasticsearch(
     basic_auth=(es_auth_user, es_auth_pw)
 )
 
-setupSemanticSearch()
+# setupSemanticSearch()
 
 @app.get("/")
 def read_root():
@@ -92,7 +92,6 @@ def read_root():
 
 @app.get("/paper/{paper_id}")
 def get_paper(paper_id: str):
-
     es_client = ElasticsearchResMe(0, 1)
     resp = es_client.get_paper_by_id(paper_id)
     return resp
