@@ -7,9 +7,9 @@ import { setDoc, doc, deleteDoc, getDoc } from "firebase/firestore";
 import { db } from "../../../firebase";
 import { SnackbarProvider, useSnackbar } from "notistack";
 
-async function addBookmarkInBackend(paperId, userId) {
+async function addBookmarkInBackend(paperId, userId, paperTitle) {
   const bookmarkRef = doc(db, "users", userId, "bookmarks", paperId);
-  const bookmarkData = {};
+  const bookmarkData = { paperTitle: paperTitle };
   return setDoc(bookmarkRef, bookmarkData)
     .then(() => {
       console.log("Document has been added successfully");
@@ -30,12 +30,12 @@ async function removeBookmarkInBackend(paperId, userId) {
     });
 }
 
-async function syncWithBackend(isBookmarked, paperId, userId) {
+async function syncWithBackend(isBookmarked, paperId, userId, paperTitle) {
   let backendResponse;
   if (isBookmarked) {
     backendResponse = removeBookmarkInBackend(paperId, userId);
   } else {
-    backendResponse = addBookmarkInBackend(paperId, userId);
+    backendResponse = addBookmarkInBackend(paperId, userId, paperTitle);
   }
   return backendResponse;
 }
@@ -84,14 +84,19 @@ async function isPaperBookmarked(paperId, userId) {
   });
 }
 
-export function BookmarkButtonWithoutSnack({ paperId }) {
+export function BookmarkButtonWithoutSnack({ paperId, paperTitle }) {
   const [isBookmarked, setIsBookmarked] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
 
   const userId = "khanh@gmail.com";
 
   const handleClick = async () => {
-    const backendResponse = syncWithBackend(isBookmarked, paperId, userId);
+    const backendResponse = syncWithBackend(
+      isBookmarked,
+      paperId,
+      userId,
+      paperTitle
+    );
     updateState(
       backendResponse,
       isBookmarked,
@@ -119,10 +124,10 @@ export function BookmarkButtonWithoutSnack({ paperId }) {
   );
 }
 
-export default function BookmarkButton({ paperId }) {
+export default function BookmarkButton({ paperId, paperTitle }) {
   return (
     <SnackbarProvider maxSnack={3}>
-      <BookmarkButtonWithoutSnack paperId={paperId} />
+      <BookmarkButtonWithoutSnack paperId={paperId} paperTitle={paperTitle} />
     </SnackbarProvider>
   );
 }

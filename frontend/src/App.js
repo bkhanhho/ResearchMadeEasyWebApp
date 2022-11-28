@@ -22,6 +22,7 @@ import Subscriptions from "./components/pages/user/account/Subscriptions";
 import SPapers from "./components/pages/user/account/SPapers";
 import FormL from "./components/pages/user/signup-login/FormL";
 import FormS from "./components/pages/user/signup-login/FormS";
+import SavedPapers from "./components/pages/user/account/saved-papers/SavedPapers";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route path="/personal-info" component={PInfo} />
           <Route path="/subscriptions" component={Subscriptions} />
           <Route path="/saved-papers" component={SPapers} />
+          <Route path="/saved-papers2" component={SavedPapers} />
           <Route path="/login" component={FormL} />
           <Route path="/sign-up" component={FormS} />
         </Switch>
