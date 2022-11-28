@@ -26,10 +26,10 @@ async function getPaperResponse() {
     // return jsonObj;
 
     try {
-        const response = await fetch('http://127.0.0.1:8000/search?searchQuery=vertical', {mode:'no-cors'});
+        const response = await fetch('http://127.0.0.1:8000/search?query=vertical', {mode:'no-cors'});
     
         if (!response.ok) {
-          throw new Error(`Error! status: ${response.status}`);
+          throw new Error(`Error! status: ${response.status}`); 
         }
         const result = await response.json();
         console.log("successful result is: ", result);
