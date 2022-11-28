@@ -4,7 +4,8 @@ import React from 'react';
 import Card from './Card';
 
 function SearchList({ filteredPapers }) {
-  const filtered = filteredPapers.map(paper =>  <Card key={paper.id} paper={paper} />); 
+  console.log(filteredPapers);
+  const filtered = filteredPapers.map(paper =>  <Card key={paper.id} paper={paper.source} />); 
   return (
     <div>
       {filtered}

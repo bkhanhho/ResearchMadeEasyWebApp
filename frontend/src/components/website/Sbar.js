@@ -34,12 +34,15 @@ function Sbar({  }) {
     } else {
       setSearchShow(true);
       const results  = await searchPapers(e.target.value)
-      setResults(results)
+      // console.log(results);
+      let something = results.map(result => result._source);
+      console.log(something);
+      setResults(something);
     }
   };
 
   function searchList() {
-    if (searchShow != "") {
+    if (searchShow) {
       return (
         <Scroll>
           <SearchList filteredPapers={SearchedPapers} />

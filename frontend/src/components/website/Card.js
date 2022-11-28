@@ -4,6 +4,7 @@ import React from 'react';
 
 //NOTE: I changed all the "person" to "paper" (function Card({paper}))
 function Card({paper}) {
+  console.log(paper);
   var link = getCorrectLink(paper.id);
   return(
     <div className="card">
