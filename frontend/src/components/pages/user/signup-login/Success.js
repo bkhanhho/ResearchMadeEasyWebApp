@@ -1,5 +1,6 @@
 import React from 'react';
-import './Form.css';
+import './FormS.css';
+import './FormL.css';
 
 const Success = () => {
   return (

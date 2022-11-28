@@ -14,14 +14,31 @@ export default function PInfo() {
         <div className="header1">Personal Information</div>
       </div>
       <div className="info-container">
-        <div classname="info">
-          <h2 className="header2">First Name: JOHN</h2>
-          <h2 className="header2">Last Name:  DOE</h2>
+        <div classname="flex-container1">
+          <h2 className="header2">FIRST NAME</h2>
+          <h2 className="header2">LAST NAME</h2>
+        </div>
+        <div className="flex-container2">
+          <h2 className="header3">JOHN</h2>
+          <h2 className="header3">DOE</h2>
         </div>
       </div>
+
       <div className="info-container">
-        <div classname="info">
-          <h2 className="header2">Email: John.Doe@ttu.edu</h2>
+        <div className="flex-container1">
+          <h2 className="header2">EMAIL</h2>
+        </div>
+        <div className="flex-container3">
+          <h2 className="header3">John.Doe@ttu.edu</h2>
+        </div>
+      </div>
+
+      <div className="info-container">
+        <div className="flex-container1">
+          <h2 className="header2">PASSWORD</h2>
+        </div>
+        <div className="flex-container2">
+          <h2 className="header3">*********</h2>
         </div>
       </div>
     </div>

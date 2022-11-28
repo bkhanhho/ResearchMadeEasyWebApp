@@ -19,7 +19,7 @@ export default function SPapers() {
           <Cards />
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
