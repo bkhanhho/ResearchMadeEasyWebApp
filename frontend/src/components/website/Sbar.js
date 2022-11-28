@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Scroll from './Scroll';
 import SearchList from './SearchList';
 import Cards from './Cards';
-import {searchPapers} from '../../services/paper_service';
+import {autosuggestPapers} from '../../services/paper_service';
 import './Sbar.css';
 
 function Sbar({  }) {
@@ -33,11 +33,11 @@ function Sbar({  }) {
       setSearchShow(false);
     } else {
       setSearchShow(true);
-      const results  = await searchPapers(e.target.value)
-      // console.log(results);
-      let something = results.map(result => result._source);
-      console.log(something);
-      setResults(something);
+      const results  = await autosuggestPapers(e.target.value)
+      console.log(results);
+      // let something = results.map(result => result._source);
+      // console.log(something);
+      setResults(results);
     }
   };
 

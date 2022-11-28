@@ -130,12 +130,12 @@ def search_elastic(query: Union[str, None],  response: fastapi.Response, filters
     resp = es_client.search(query, user_filters=filters)
     return resp
 
-@app.get("/autosuggest/{input}", status_code=fastapi.status.HTTP_200_OK)
-def search_elastic(input: str, response: fastapi.Response, start: int = 0, size: int = 10):
-    if input == None or input.strip() == "":
+@app.get("/autosuggest/{query}", status_code=fastapi.status.HTTP_200_OK)
+def search_elastic(query: str, response: fastapi.Response, start: int = 0, size: int = 10):
+    if query == None or query.strip() == "":
         response.status_code = fastapi.status.HTTP_400_BAD_REQUEST
         return {"reason": "Try adding the query parameter and giving it a non empty"}
 
     es_client = ElasticsearchResMe(start, size)
-    resp = es_client.autosuggest(input)
+    resp = es_client.autosuggest(query)
     return resp
