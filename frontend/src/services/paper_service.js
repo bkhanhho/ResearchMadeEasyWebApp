@@ -33,11 +33,12 @@ export async function getRelatedPapers(title, abstract) {
 
 export async function searchPapers(query) {
   try {
-    const url = 'http://127.0.0.1:8000/search?title=' + query;
+    const url = 'http://127.0.0.1:8000/search?query=' + query;
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`Error! status: ${response.status}`);
     }
+
     const result = await response.json();
     // console.log("successful result is: ", { url }, { result });
 
