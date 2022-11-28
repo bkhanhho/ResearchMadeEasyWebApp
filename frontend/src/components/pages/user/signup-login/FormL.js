@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import './Form.css';
-import SignUp from './SignUp';
+import './FormL.css';
+import Login from './Login';
 import Success from './Success';
 
-const Form = () => {
+const FormL = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  function submitForm() {
+  function submitFormL() {
     setIsSubmitted(true);
   }
   return (
@@ -16,7 +16,7 @@ const Form = () => {
         <div className='form-content-left'>
         </div>
         {!isSubmitted ? (
-          <SignUp submitForm={submitForm} />
+          <Login submitForm={submitFormL} />
         ) : (
           <Success />
         )}
@@ -25,4 +25,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default FormL;

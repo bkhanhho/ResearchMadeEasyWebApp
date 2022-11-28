@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import './AccountHome.css';
-import Subscriptions from './Subscriptions';
 import Footer from '../../../website/Footer';
 import PInfo from './PInfo';
 
@@ -28,17 +27,10 @@ function Account() {
 
   window.addEventListener('resize', showButton);
 
-  function subs() {
-    return (
-      <Subscriptions />
-    );
-  }
-
   return (
   <>
     <div className='side'>
       <div className='side-container'>
-        <Link to='/subscriptions' className='side-links'>Subscriptions</Link>
         <Link to='/saved-papers' className='side-links'>Saved Papers</Link>
         <Link to='/personal-info' className='side-links'>Personal Information</Link>
       </div>

@@ -1,68 +1,14 @@
- /* container */
- .info-container {
-    margin-left: 300px;
-    margin-right: 30px;
-    margin-top: 12px;
+.form-container {
+    margin: 100px auto;
+    width: 1000px;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
-    justify-content: left;
+    position: relative;
     border-radius: 10px;
-    height: auto;
-    display: flex;
-  }
-
-  .flex-container1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-  }
-
-  .flex-container2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-  }
-
-  .flex-container3 {
-    padding-left: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-  }
-
-  .info-container-right {
-    margin-left: 300px;
-    margin-right: 30px;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
-    justify-content: left;
-    border-radius: 10px;
-    height: 600px;
+    height: 650px;
     display: grid;
-
+    grid-template-columns: 1fr 1fr;
   }
-
-  .header1 {
-    font-size: 45px;
-    text-align: left;
-    padding-left: 300px;
-    padding-bottom: 1.5rem;
-  }
-
-  .header2 {
-    text-align: left;
-    color: #595959;
-    font-size: 14px;
-    padding-top: 2.1541rem;
-    padding-left: 2.5rem;
-    padding-bottom: 1.7rem;
-  }
-
-  .header3 {
-    text-align: left;
-    padding-top: 1.5rem;
-    padding-left: 3.5rem;
-    padding-bottom: 1.5rem;
-  }
-
+  
   .close-btn {
     position: absolute;
     top: 2%;
@@ -73,41 +19,43 @@
     cursor: pointer;
   }
   
-  .info-content-left {
-
+  .form-content-left {
+    background: linear-gradient(
+      90deg,
+      rgb(39, 176, 255) 0%,
+      rgb(0, 232, 236) 100%
+    );
+    border-radius: 10px 0 0 10px;
     position: relative;
-    justify-content: right;
   }
   
-  .info-success {
+  .form-success {
     text-align: center;
     font-size: 24px;
     margin-top: 80px;
     color: #fff;
   }
   
-  .info-content-right {
+  .form-content-right {
     border-radius: 0 10px 10px 0;
     position: relative;
     background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(17, 17, 17) 100%);
   }
   
-  .info {
-    position: absolute;
-    width: 90%;
-    height: 100%;
-    display: grid;
-    justify-content: left;
-    align-items: left;
-  }
-
-  .user-info {
-    display: grid;
-    justify-content: left;
-    align-items: center;
+  .form {
+    position: relative;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: right;
   }
   
-  .info h1 {
+  .form h1 {
     font-size: 1rem;
     text-align: start;
     width: 80%;
@@ -115,25 +63,25 @@
     color: #fff;
   }
   
-  .info-inputs {
+  .form-inputs {
     margin-bottom: 0.5rem;
     width: 80%;
   }
   
-  .info-inputs p {
+  .form-inputs p {
     font-size: 0.8rem;
     margin-top: 0.5rem;
     color: #f00e0e;
   }
   
-  .info-label {
+  .form-label {
     display: inline-block;
     font-size: 0.8rem;
     margin-bottom: 6px;
     color: #fff;
   }
   
-  .info-input {
+  .form-input {
     display: block;
     padding-left: 10px;
     outline: none;
@@ -143,12 +91,12 @@
     border: none;
   }
   
-  .info-input::placeholder {
+  .form-input::placeholder {
     color: #595959;
     font-size: 12px;
   }
   
-  .info-input-btn {
+  .form-input-btn {
     width: 80%;
     height: 50px;
     margin-top: 10px;
@@ -164,7 +112,7 @@
     font-size: 1rem;
   }
   
-  .info-input-btn:hover {
+  .form-input-btn:hover {
     cursor: pointer;
     background: linear-gradient(
       90deg,
@@ -174,7 +122,7 @@
     transition: all 0.4s ease-out;
   }
   
-  .info-input-login {
+  .form-input-sign-up {
     font-size: 0.8rem;
     margin-top: 10px;
     color: #fff;
@@ -182,7 +130,7 @@
     text-align: center;
   }
   
-  .info-input-login a {
+  .form-input-sign-up a {
     text-decoration: none;
     color: #27cdff;
     font-weight: 600;
