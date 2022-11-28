@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { IconButton } from "@mui/material";
 import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
 import BookmarkOutlinedIcon from "@mui/icons-material/BookmarkOutlined";
 import { useState } from "react";
-import { setDoc, doc, deleteDoc } from "firebase/firestore";
+import { setDoc, doc, deleteDoc, getDoc } from "firebase/firestore";
 import { db } from "../../../firebase";
 import { SnackbarProvider, useSnackbar } from "notistack";
 
-function addBookmarkInBackend(paperId, userId) {
+async function addBookmarkInBackend(paperId, userId) {
   const bookmarkRef = doc(db, "users", userId, "bookmarks", paperId);
   const bookmarkData = {};
   return setDoc(bookmarkRef, bookmarkData)
@@ -19,7 +19,7 @@ function addBookmarkInBackend(paperId, userId) {
     });
 }
 
-function removeBookmarkInBackend(paperId, userId) {
+async function removeBookmarkInBackend(paperId, userId) {
   const bookmarkRef = doc(db, "users", userId, "bookmarks", paperId);
   return deleteDoc(bookmarkRef)
     .then(() => {
@@ -40,7 +40,7 @@ async function syncWithBackend(isBookmarked, paperId, userId) {
   return backendResponse;
 }
 
-function updateState(
+async function updateState(
   backendResponse,
   isBookmarked,
   setIsBookmarked,
@@ -66,12 +66,31 @@ function updateState(
     });
 }
 
+async function getBookmarkInBackend(paperId, userId) {
+  var bookmarkRef = doc(db, "users", userId, "bookmarks", paperId);
+  return getDoc(bookmarkRef)
+    .then((response) => {
+      console.log("Document has been read", response);
+      return response;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+async function isPaperBookmarked(paperId, userId) {
+  return getBookmarkInBackend(paperId, userId).then((backendResponse) => {
+    return backendResponse.exists();
+  });
+}
+
 export function BookmarkButtonWithoutSnack({ paperId }) {
   const [isBookmarked, setIsBookmarked] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
 
+  const userId = "khanh@gmail.com";
+
   const handleClick = async () => {
-    const userId = "khanh@gmail.com";
     const backendResponse = syncWithBackend(isBookmarked, paperId, userId);
     updateState(
       backendResponse,
@@ -80,6 +99,18 @@ export function BookmarkButtonWithoutSnack({ paperId }) {
       enqueueSnackbar
     );
   };
+
+  useEffect(() => {
+    let mounted = true;
+    isPaperBookmarked(paperId, userId).then((bookmarkedInBackend) => {
+      if (mounted) {
+        setIsBookmarked(bookmarkedInBackend);
+      }
+    });
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   return (
     <IconButton aria-label="delete" color="primary" onClick={handleClick}>
