@@ -11,7 +11,7 @@ export default function SavedPaperCard({
   console.log("paperid is:", paperId);
   return (
     <ul>
-      <li className="cards__item" key={paperId}>
+      <li className="cards__item">
         <Link className="cards__item__link" to={paperDetailsLink}>
           <figure className="cards__item__pic-wrap" data-category={imageLabel}>
             <img className="cards__item__img" alt="Image" src={imagePath} />
