@@ -3,12 +3,9 @@ import { responsivePropType } from 'react-bootstrap/esm/createUtilityClasses';
 import '../../../App.css';
 
 //TODO: this func should receive search query from user
-export default function getPaperResponse() {
-    //localhost:8000/search?searchQuery=somequery%20fromtheuser
+export default function getPaperResponse(query) {
 
-    //http://127.0.0.1:8000/search?searchQuery=ReplaceWithSearchQueryHere
-
-    fetch('http://127.0.0.1:8000/search?searchQuery=vertical')
+    fetch('http://127.0.0.1:8000/search?query=' + query)
     .then(response => {
         if (response.ok) {
             return response.json
@@ -16,8 +13,6 @@ export default function getPaperResponse() {
         throw response;
     }) 
 
-    // const jsonObj = require('./elasticsearch_response.json'); // get response from backend, check if 200 then proceed with next step.
-    // return jsonObj;
 }
 
 function searchedPaper() {

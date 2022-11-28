@@ -6,6 +6,7 @@ import PaperSubtitle from "./PaperSubtitle";
 import PaperSummary from "./PaperSummary";
 import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
+import RelatedPapersTable from "./RelatedPapersTable";
 
 export default function Paper() {
   const [paperInfo, setPaperInfo] = useState({});
@@ -35,7 +36,8 @@ export default function Paper() {
         date={paperInfo?.release_date}
         categories={paperInfo?.category}
       />
-      <PaperSummary summary={paperInfo?.summary} />
+      <PaperSummary summary={paperInfo.summary} />
+      <RelatedPapersTable title={paperInfo.title} abstract="abstract" />
     </div>
   );
 }
