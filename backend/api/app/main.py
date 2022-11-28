@@ -14,29 +14,31 @@ import json
 import os
 from sentence_transformers import SentenceTransformer, util
 
-#First, we load the papers dataset (with title and abstract information)
-dataset_file = 'emnlp2016-2018.json'
+def setupSemanticSearch():
+    #First, we load the papers dataset (with title and abstract information)
+    dataset_file = 'emnlp2016-2018.json'
 
-if not os.path.exists(dataset_file):
-  util.http_get("https://sbert.net/datasets/emnlp2016-2018.json", dataset_file)
-else:
-    print("File already downlaoded")
+    if not os.path.exists(dataset_file):
+        util.http_get("https://sbert.net/datasets/emnlp2016-2018.json", dataset_file)
+    else:
+        print("File already downlaoded")
 
-with open(dataset_file) as fIn:
-  papers = json.load(fIn)
+    with open(dataset_file) as fIn:
+        papers = json.load(fIn)
 
-print(len(papers), "papers loaded")
+    print(len(papers), "papers loaded")
 
-#We then load the allenai-specter model with SentenceTransformers
-model = SentenceTransformer('allenai-specter')
+    #We then load the allenai-specter model with SentenceTransformers
+    model = SentenceTransformer('allenai-specter')
 
-#To encode the papers, we must combine the title and the abstracts to a single string
-paper_texts = [paper['title'] + '[SEP]' + paper['abstract'] for paper in papers]
-print("loaded paper_texts")
-#Compute embeddings for all papers
-corpus_embeddings = model.encode(paper_texts, convert_to_tensor=True)
-print("Computed embeddings")
+    #To encode the papers, we must combine the title and the abstracts to a single string
+    paper_texts = [paper['title'] + '[SEP]' + paper['abstract'] for paper in papers]
+    print("loaded paper_texts")
+    #Compute embeddings for all papers
+    corpus_embeddings = model.encode(paper_texts, convert_to_tensor=True)
+    print("Computed embeddings")
 
+    
 #We define a function, given title & abstract, searches our corpus for relevant (similar) papers
 def search_papers(title, abstract):
     query_embedding = model.encode(title+'[SEP]'+abstract, convert_to_tensor=True)
@@ -76,6 +78,7 @@ es_client = Elasticsearch(
     basic_auth=(es_auth_user, es_auth_pw)
 )
 
+setupSemanticSearch()
 
 @app.get("/")
 def read_root():
@@ -89,8 +92,12 @@ def read_root():
 
 @app.get("/paper/{paper_id}")
 def get_paper(paper_id: str):
+
+    es_client = ElasticsearchResMe(0, 1)
+    resp = es_client.get_paper_by_id(paper_id)
+    return resp
     # todo call the db to get a paper's info
-    return {"not implemented"}
+    # return {"not implemented"}
 
 
 @app.get("/related/", status_code=fastapi.status.HTTP_200_OK)
@@ -103,25 +110,25 @@ async def get_related_papers(title: Union[str, None], abstract: Union[str, None]
     return {"result": res}
     # return {"Not implemented"}
 
-@app.get("/bookmark/{user_id}", status_code=fastapi.status.HTTP_200_OK)
-async def get_saved_papers(user_id: str, response: fastapi.Response):
-    # todo call the db to get a paper's info
-    return {"Not implemented"}
+# @app.get("/bookmark/{user_id}", status_code=fastapi.status.HTTP_200_OK)
+# async def get_saved_papers(user_id: str, response: fastapi.Response):
+#     # todo call the db to get a paper's info
+#     return {"Not implemented"}
 
 
-@app.post("/bookmark/{user_id}", status_code=fastapi.status.HTTP_201_CREATED)
-def add_saved_paper(user_id: str, paper_id: Union[str, None], response: fastapi.Response):
-    return {"Not implemented"}
+# @app.post("/bookmark/{user_id}", status_code=fastapi.status.HTTP_201_CREATED)
+# def add_saved_paper(user_id: str, paper_id: Union[str, None], response: fastapi.Response):
+#     return {"Not implemented"}
 
 
 @app.get("/search", status_code=fastapi.status.HTTP_200_OK)
-def search_elastic(query: Union[str, None], response: fastapi.Response, start: int = 0, size: int = 10):
+def search_elastic(query: Union[str, None],  response: fastapi.Response, filters: Union[str, None] = None, start: int = 0, size: int = 10):
     if query == None or query.strip() == "":
         response.status_code = fastapi.status.HTTP_400_BAD_REQUEST
         return {"reason": "Try adding the query parameter and giving it a non empty"}
 
     es_client = ElasticsearchResMe(start, size)
-    resp = es_client.search(query)
+    resp = es_client.search(query, user_filters=filters)
     return resp
 
 @app.get("/autosuggest/{input}", status_code=fastapi.status.HTTP_200_OK)
