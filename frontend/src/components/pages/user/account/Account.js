@@ -1,11 +1,11 @@
 /* User can create account or login. */
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-import './AccountHome.css';
-import Subscriptions from './Subscriptions';
-import Footer from '../../../website/Footer';
-import PInfo from './PInfo';
+import "./AccountHome.css";
+import Subscriptions from "./Subscriptions";
+import Footer from "../../../website/Footer";
+import PInfo from "./PInfo";
 
 function Account() {
   const [click, setClick] = useState(false);
@@ -26,24 +26,25 @@ function Account() {
     showButton();
   }, []);
 
-  window.addEventListener('resize', showButton);
+  window.addEventListener("resize", showButton);
 
   function subs() {
-    return (
-      <Subscriptions />
-    );
+    return <Subscriptions />;
   }
 
   return (
-  <>
-    <div className='side'>
-      <div className='side-container'>
-        <Link to='/subscriptions' className='side-links'>Subscriptions</Link>
-        <Link to='/saved-papers' className='side-links'>Saved Papers</Link>
-        <Link to='/personal-info' className='side-links'>Personal Information</Link>
+    <>
+      <div className="side">
+        <div className="side-container">
+          <Link to="/saved-papers2" className="side-links">
+            Saved Papers
+          </Link>
+          <Link to="/personal-info" className="side-links">
+            Personal Information
+          </Link>
+        </div>
       </div>
-    </div>
-  </>
+    </>
   );
 }
 
