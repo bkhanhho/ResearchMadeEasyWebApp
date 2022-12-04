@@ -8,7 +8,7 @@ import React from "react";
 import Navbar from "./components/website/header/Navbar";
 import "./App.css";
 import Main from "./components/pages/home/Main";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Paper from "./components/pages/paper/Paper";
 import Related from "./components/pages/paper/Related";
@@ -25,17 +25,18 @@ function App() {
     <>
       <Router>
         <Navbar />
-        <Switch>
-          <Route path="/" exact component={Main} />
-          <Route path="/paper/:paperId" component={Paper} />
-          <Route path="/related-papers" component={Related} />
-          <Route path="/read-paper" component={Read} />
-          <Route path="/account" component={Account} />
-          <Route path="/personal-info" component={PInfo} />
-          <Route path="/saved-papers2" component={SavedPapers} />
-          <Route path="/login" component={FormL} />
-          <Route path="/sign-up" component={FormS} />
-        </Switch>
+        <Routes>
+          <Route path="/" exact element={<Main />} />
+          <Route path="paper/:paperId" element={<Paper />} />
+          <Route path="related-papers" element={<Related />} />
+          <Route path="read-paper" element={<Read />} />
+          <Route path="account" element={<Account />}>
+            <Route path="personal-info" element={<PInfo />} />
+            <Route path="saved-papers" element={<SavedPapers />} />
+          </Route>
+          <Route path="login" element={<FormL />} />
+          <Route path="sign-up" element={<FormS />} />
+        </Routes>
       </Router>
     </>
   );

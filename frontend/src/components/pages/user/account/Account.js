@@ -6,6 +6,7 @@ import "./AccountHome.css";
 import Subscriptions from "./Subscriptions";
 import Footer from "../../../website/footer/Footer";
 import PInfo from "./PInfo";
+import { Outlet } from "react-router-dom";
 
 function Account() {
   const [click, setClick] = useState(false);
@@ -36,13 +37,14 @@ function Account() {
     <>
       <div className="side">
         <div className="side-container">
-          <Link to="/saved-papers2" className="side-links">
+          <Link to="/account/saved-papers" className="side-links">
             Saved Papers
           </Link>
-          <Link to="/personal-info" className="side-links">
+          <Link to="/account/personal-info" className="side-links">
             Personal Information
           </Link>
         </div>
+        <Outlet />
       </div>
     </>
   );
