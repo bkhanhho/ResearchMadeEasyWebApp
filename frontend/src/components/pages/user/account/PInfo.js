@@ -9,7 +9,6 @@ import "./InfoLayout.css";
 export default function PInfo() {
   return (
     <div>
-      <Account />
       <div>
         <div className="header1">Personal Information</div>
       </div>

@@ -31,6 +31,7 @@ function App() {
           <Route path="related-papers" element={<Related />} />
           <Route path="read-paper" element={<Read />} />
           <Route path="account" element={<Account />}>
+            <Route index element={<PInfo />} />
             <Route path="personal-info" element={<PInfo />} />
             <Route path="saved-papers" element={<SavedPapers />} />
           </Route>
