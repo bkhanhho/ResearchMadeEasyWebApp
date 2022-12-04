@@ -1,7 +1,7 @@
 /* Display randomly generated papers on the main page. */
 
 import React from "react";
-import "./Cards.css";
+import "../../../website/cards/Cards.css";
 import PaperPreviewCard from "../../../website/cards/PaperPreviewCard";
 
 function CardsSub() {
