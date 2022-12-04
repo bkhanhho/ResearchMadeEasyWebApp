@@ -1,13 +1,13 @@
 import React from "react";
 import "../../../App.css";
-import Sbar from "../../website/search/Sbar";
+import SearchMain from "../../website/search/SearchMain";
 import initialDetails from "../../website/initialDetails";
 import Footer from "../../website/footer/Footer";
 
 function Main() {
   return (
     <div>
-      <Sbar details={initialDetails} />
+      <SearchMain details={initialDetails} />
       <Footer />
     </div>
   );

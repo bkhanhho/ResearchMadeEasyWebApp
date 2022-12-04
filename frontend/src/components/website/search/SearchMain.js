@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Scroll from "../navigation/Scroll";
 import SearchList from "./SearchList";
 import Cards from "../cards/Cards";
-import "./Sbar.css";
+import "./SearchMain.css";
 
-function Sbar({ details }) {
+function SearchMain({ details }) {
   const [searchField, setSearchField] = useState("");
   const [searchShow, setSearchShow] = useState(false);
 
@@ -54,4 +54,4 @@ function Sbar({ details }) {
   );
 }
 
-export default Sbar;
+export default SearchMain;
