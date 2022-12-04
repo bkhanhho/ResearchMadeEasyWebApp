@@ -2,7 +2,7 @@
 
 import React from "react";
 import "./Cards.css";
-import PaperPreviewCard from "./PaperPreviewCard";
+import PaperPreviewCard from "../../../website/cards/PaperPreviewCard";
 
 function Cards() {
   return (
