@@ -1,10 +1,10 @@
 /* When user is logged in, the user can view their subscriptions. */
 
-import React from 'react';
-import '../../../../App.css';
-import Footer from '../../../website/Footer';
-import Account from './Account';
-import CardsSub from './CardsSub'
+import React from "react";
+import "../../../../App.css";
+import Footer from "../../../website/footer/Footer";
+import Account from "./Account";
+import CardsSub from "./CardsSub";
 
 export default function Subscriptions() {
   return (
@@ -22,4 +22,3 @@ export default function Subscriptions() {
     </div>
   );
 }
-

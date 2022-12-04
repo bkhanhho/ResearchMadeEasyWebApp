@@ -1,11 +1,11 @@
 /* When user is logged in, they can view their saved papers. */
 
-import React from 'react';
-import '../../../../App.css';
-import Footer from '../../../website/Footer';
-import Account from './Account';
-import Cards from './Cards';
-import './InfoLayout.css'
+import React from "react";
+import "../../../../App.css";
+import Footer from "../../../website/footer/Footer";
+import Account from "./Account";
+import Cards from "./Cards";
+import "./InfoLayout.css";
 
 export default function SPapers() {
   return (

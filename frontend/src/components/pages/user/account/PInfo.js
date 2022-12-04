@@ -2,7 +2,7 @@
 
 import React from "react";
 import "../../../../App.css";
-import Footer from "../../../website/Footer";
+import Footer from "../../../website/footer/Footer";
 import Account from "./Account";
 import "./InfoLayout.css";
 

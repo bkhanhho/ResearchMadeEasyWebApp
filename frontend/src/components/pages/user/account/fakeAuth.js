@@ -1,13 +1,13 @@
 /* auth. */
 
-import React from 'react';
-import '../../../../App.css';
-import Footer from '../../../website/Footer';
+import React from "react";
+import "../../../../App.css";
+import Footer from "../../../website/footer/Footer";
 
 const fakeAuth = () => {
-    const fakeAuthenticate = () => 
-        new Promise((resolve) => {
-        setTimeout(() => resolve('CAPSTONE123'),250);
+  const fakeAuthenticate = () =>
+    new Promise((resolve) => {
+      setTimeout(() => resolve("CAPSTONE123"), 250);
     });
 };
 

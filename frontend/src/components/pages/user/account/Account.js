@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import "./AccountHome.css";
 import Subscriptions from "./Subscriptions";
-import Footer from "../../../website/Footer";
+import Footer from "../../../website/footer/Footer";
 import PInfo from "./PInfo";
 
 function Account() {
