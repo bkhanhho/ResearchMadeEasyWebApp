@@ -7,7 +7,7 @@ to compile. */
 import React from "react";
 import Navbar from "./components/website/Navbar";
 import "./App.css";
-import Main from "./components/pages/Main";
+import Main from "./components/pages/home/Main";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Paper from "./components/pages/paper/Paper";
