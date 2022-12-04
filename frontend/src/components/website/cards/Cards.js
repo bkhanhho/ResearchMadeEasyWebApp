@@ -2,7 +2,7 @@
 
 import React from "react";
 import "./Cards.css";
-import CardItem from "./CardItem";
+import PaperPreviewCard from "./PaperPreviewCard";
 
 function Cards() {
   return (
@@ -11,19 +11,19 @@ function Cards() {
       <div className="cards__container">
         <div className="cards__wrapper">
           <ul className="cards__items">
-            <CardItem
+            <PaperPreviewCard
               src="images/img-home.jpg"
               text="Random Paper Title for Artificial Intelligence"
               label="Random Paper"
               path="/"
             />
-            <CardItem
+            <PaperPreviewCard
               src="images/img.jpg"
               text="Random Paper Title for Computer Vision and Pattern Recognition"
               label="Random Paper"
               path="/"
             />
-            <CardItem
+            <PaperPreviewCard
               src="images/img-1.jpg"
               text="Random Paper Title for Parallel Processing"
               label="Random Paper"
@@ -31,19 +31,19 @@ function Cards() {
             />
           </ul>
           <ul className="cards__items">
-            <CardItem
+            <PaperPreviewCard
               src="images/img-7.jpg"
               text="Random Paper Title for Artificial Intelligence"
               label="Random Paper"
               path="/details"
             />
-            <CardItem
+            <PaperPreviewCard
               src="images/img-3.jpg"
               text="Random Paper Title for Computer Vision and Pattern Recognition"
               label="Random Paper"
               path="/detail"
             />
-            <CardItem
+            <PaperPreviewCard
               src="images/img-4.jpg"
               text="Random Paper Title for Parallel Processing"
               label="Random Paper"
