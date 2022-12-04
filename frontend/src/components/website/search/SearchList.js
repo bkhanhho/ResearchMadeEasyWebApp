@@ -2,7 +2,7 @@
 
 import React from "react";
 import PaperSearchCard from "../cards/PaperSearchCard";
-import Cards from "../cards/Cards";
+import DefaultPreviewCards from "../cards/DefaultPreviewCards";
 
 function SearchList({ searchResultPapers }) {
   let paperCards;
@@ -11,7 +11,7 @@ function SearchList({ searchResultPapers }) {
       <PaperSearchCard key={paper.paper_id} paper={paper} />
     ));
   } else {
-    paperCards = <Cards />;
+    paperCards = <DefaultPreviewCards />;
   }
   return <div>{paperCards}</div>;
 }

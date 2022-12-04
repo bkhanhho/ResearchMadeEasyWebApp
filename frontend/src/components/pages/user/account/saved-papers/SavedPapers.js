@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../../../../../App.css";
 import "../InfoLayout.css";
-import "../../../../website/cards/Cards.css";
+import "../../../../website/cards/DefaultPreviewCards.css";
 import SavedPaperCard from "./SavedPaperCard";
 import { collection, getDocs, doc } from "firebase/firestore";
 import { db } from "../../../../../firebase";

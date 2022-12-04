@@ -1,10 +1,10 @@
 /* Display randomly generated papers on the main page. */
 
 import React from "react";
-import "./Cards.css";
+import "./DefaultPreviewCards.css";
 import PaperPreviewCard from "./PaperPreviewCard";
 
-function Cards() {
+function DefaultPreviewCards() {
   return (
     <div className="cards">
       <h1>Check out these articles!</h1>
@@ -56,4 +56,4 @@ function Cards() {
   );
 }
 
-export default Cards;
+export default DefaultPreviewCards;
