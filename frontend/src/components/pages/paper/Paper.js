@@ -28,8 +28,10 @@ export default function Paper() {
 
   return (
     <div className="paper">
-      <h1>{paperInfo?.title}</h1>
-      <BookmarkButton paperId={paperId} paperTitle={paperInfo?.title} />
+      <h1>
+        {paperInfo?.title}
+        <BookmarkButton paperId={paperId} paperTitle={paperInfo?.title} />
+      </h1>
       <ReadPaperButton link={paperInfo?.link} />
       <PaperSubtitle
         authors={paperInfo?.authors}
