@@ -15,11 +15,6 @@ function PaperSearchCard({ paper }) {
 
   return (
     <div className="card">
-      <img
-        className="card-person"
-        alt={paperTitle}
-        src={process.env.PUBLIC_URL + paper.imgPath}
-      />
       <div>
         <h2>
           <a href={link}> {paperTitle} </a>
