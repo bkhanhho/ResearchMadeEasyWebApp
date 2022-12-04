@@ -7,7 +7,7 @@ function displayAuthors(authors) {
   return authors.map(({ name }) => `${name}`).join(", ");
 }
 
-function Card({ paper }) {
+function PaperSearchCard({ paper }) {
   const link = "/paper/" + paper._source.paper_id;
   const paperTitle = paper._source.title;
   const paperDate = paper._source.release_date;
@@ -32,4 +32,4 @@ function Card({ paper }) {
   );
 }
 
-export default Card;
+export default PaperSearchCard;
