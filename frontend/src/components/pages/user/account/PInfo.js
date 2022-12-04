@@ -1,10 +1,10 @@
 /* When user is logged in, they can view personal information. */
 
-import React from 'react';
-import '../../../../App.css';
-import Footer from '../../../website/Footer';
-import Account from './Account';
-import './InfoLayout.css'
+import React from "react";
+import "../../../../App.css";
+import Footer from "../../../website/Footer";
+import Account from "./Account";
+import "./InfoLayout.css";
 
 export default function PInfo() {
   return (
@@ -14,7 +14,7 @@ export default function PInfo() {
         <div className="header1">Personal Information</div>
       </div>
       <div className="info-container">
-        <div classname="flex-container1">
+        <div className="flex-container1">
           <h2 className="header2">FIRST NAME</h2>
           <h2 className="header2">LAST NAME</h2>
         </div>
