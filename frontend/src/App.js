@@ -5,7 +5,7 @@
 to compile. */
 
 import React from "react";
-import Navbar from "./components/website/Navbar";
+import Navbar from "./components/website/header/Navbar";
 import "./App.css";
 import Main from "./components/pages/home/Main";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
