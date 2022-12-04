@@ -16,7 +16,6 @@ import Read from "./components/pages/paper/Read";
 
 import Account from "./components/pages/user/account/Account";
 import PInfo from "./components/pages/user/account/PInfo";
-import SPapers from "./components/pages/user/account/SPapers";
 import FormL from "./components/pages/user/signup-login/FormL";
 import FormS from "./components/pages/user/signup-login/FormS";
 import SavedPapers from "./components/pages/user/account/saved-papers/SavedPapers";
