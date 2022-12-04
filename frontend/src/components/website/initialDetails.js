@@ -1,10 +1,4 @@
 // src/data/initialDetails.js
-import {
-  PaperTitle,
-  PaperAuthors,
-  PaperDate,
-  PaperSummary,
-} from "../pages/paper/PaperDetails";
 
 //TODO: fix this to have paper details from back-end auto-fill initialDetails
 const initialDetails = [
