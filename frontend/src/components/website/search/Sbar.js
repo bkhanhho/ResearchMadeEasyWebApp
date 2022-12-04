@@ -1,32 +1,23 @@
-import React, { useState } from 'react';
-import Scroll from './Scroll';
-import SearchList from './SearchList';
-import Cards from './Cards';
-import './Sbar.css';
+import React, { useState } from "react";
+import Scroll from "../Scroll";
+import SearchList from "./SearchList";
+import Cards from "../Cards";
+import "./Sbar.css";
 
 function Sbar({ details }) {
-
   const [searchField, setSearchField] = useState("");
   const [searchShow, setSearchShow] = useState(false);
 
-  const SearchedPapers = details.filter(
-    paper => {
-      return (
-        paper
-        .name
-        .toLowerCase()
-        .includes(searchField.toLowerCase()) ||
-        paper
-        .author
-        .toLowerCase()
-        .includes(searchField.toLowerCase())
-      );
-    }
-  );
+  const SearchedPapers = details.filter((paper) => {
+    return (
+      paper.name.toLowerCase().includes(searchField.toLowerCase()) ||
+      paper.author.toLowerCase().includes(searchField.toLowerCase())
+    );
+  });
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setSearchField(e.target.value);
-    if (e.target.value==="") {
+    if (e.target.value === "") {
       setSearchShow(false);
     } else {
       setSearchShow(true);
@@ -41,9 +32,7 @@ function Sbar({ details }) {
         </Scroll>
       );
     } else {
-      return (
-        <Cards />
-      );
+      return <Cards />;
     }
   }
 
@@ -53,11 +42,11 @@ function Sbar({ details }) {
         <h2 className="f2">Research Made Easy</h2>
       </div>
       <div className="search-article-paper">
-        <input 
+        <input
           className="search-input"
-          type = "search"
-          placeholder = "  Search" 
-          onChange = {handleChange}
+          type="search"
+          placeholder="  Search"
+          onChange={handleChange}
         />
       </div>
       {searchList()}
@@ -65,4 +54,4 @@ function Sbar({ details }) {
   );
 }
 
-export default Sbar; 
+export default Sbar;

@@ -1,6 +1,6 @@
 import React from "react";
 import "../../../App.css";
-import Sbar from "../../website/Sbar";
+import Sbar from "../../website/search/Sbar";
 import initialDetails from "../../website/initialDetails";
 import Footer from "../../website/Footer";
 
