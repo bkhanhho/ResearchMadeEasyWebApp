@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Scroll from "../Scroll";
+import Scroll from "../navigation/Scroll";
 import SearchList from "./SearchList";
 import Cards from "../Cards";
 import "./Sbar.css";
