@@ -15,9 +15,10 @@ export async function getPaperFromBackend(paperId) {
   }
 }
 
-export async function getRelatedPapers(title, abstract) {
+export async function getSearchResultsFromBackend(query) {
   try {
-    const url = 'http://127.0.0.1:8000/related?title=' + title + '&abstract=' + abstract;
+    console.log("query is: ", query);
+    const url = "http://127.0.0.1:8000/search?query=" + query;
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`Error! status: ${response.status}`);
@@ -25,8 +26,25 @@ export async function getRelatedPapers(title, abstract) {
     const result = await response.json();
     console.log("successful result is: ", { url }, { result });
 
-    return result['result']
+    return result["hits"]["hits"];
   } catch (err) {
-    console.error('getRelatedPapers fetch error: ', err)
+    console.log("fetch error is: ", err);
+  }
+}
+
+export async function getRelatedPapers(title, abstract) {
+  try {
+    const url =
+      "http://127.0.0.1:8000/related?title=" + title + "&abstract=" + abstract;
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Error! status: ${response.status}`);
+    }
+    const result = await response.json();
+    console.log("successful result is: ", { url }, { result });
+
+    return result["result"];
+  } catch (err) {
+    console.error("getRelatedPapers fetch error: ", err);
   }
 }

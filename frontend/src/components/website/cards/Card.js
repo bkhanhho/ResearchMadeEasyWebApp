@@ -2,43 +2,34 @@
 
 import React from "react";
 
-//NOTE: I changed all the "person" to "paper" (function Card({paper}))
+function displayAuthors(authors) {
+  if (!authors) return;
+  return authors.map(({ name }) => `${name}`).join(", ");
+}
+
 function Card({ paper }) {
-  var link = getCorrectLink(paper.id);
+  const link = "/paper/" + paper._source.paper_id;
+  const paperTitle = paper._source.title;
+  const paperDate = paper._source.release_date;
+  const paperAuthors = paper._source.authors;
+
   return (
     <div className="card">
       <img
         className="card-person"
-        alt={paper.name}
+        alt={paperTitle}
         src={process.env.PUBLIC_URL + paper.imgPath}
       />
       <div>
         <h2>
-          <a href={link}> {paper.name} </a>
+          <a href={link}> {paperTitle} </a>
         </h2>
         <p>
-          {" "}
-          {displayListOfAuthors(paper.authors)} - {paper.year}
+          {displayAuthors(paperAuthors)} - {paperDate}
         </p>
       </div>
     </div>
   );
 }
-function displayListOfAuthors(authors) {
-  var authorList = "";
-  for (let i = 0; i < authors.length; i++) {
-    authorList += authors[i]["name"];
-    if (i < authors.length - 1) {
-      authorList += ", ";
-    }
-  }
-  return authorList;
-}
-function getCorrectLink(id) {
-  if (id == 1) {
-    return "/details";
-  } else {
-    return "/detail";
-  }
-}
+
 export default Card;
