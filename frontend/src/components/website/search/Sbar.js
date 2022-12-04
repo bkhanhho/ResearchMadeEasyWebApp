@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Scroll from "../navigation/Scroll";
 import SearchList from "./SearchList";
-import Cards from "../Cards";
+import Cards from "../cards/Cards";
 import "./Sbar.css";
 
 function Sbar({ details }) {

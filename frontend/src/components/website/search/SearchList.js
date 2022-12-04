@@ -1,7 +1,7 @@
 // src/components/SearchList.js
 
 import React from "react";
-import Card from "../Card";
+import Card from "../cards/Card";
 
 function SearchList({ filteredPapers }) {
   const filtered = filteredPapers.map((paper) => (
