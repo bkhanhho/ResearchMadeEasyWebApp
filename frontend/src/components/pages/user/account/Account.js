@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "./AccountHome.css";
 import Subscriptions from "./Subscriptions";
 import Footer from "../../../website/footer/Footer";
-import PInfo from "./personal-info/PInfo";
+import PersonalInfo from "./personal-info/PersonalInfo";
 import { Outlet } from "react-router-dom";
 
 function Account() {

@@ -4,7 +4,7 @@ import React from "react";
 import "../../../../../App.css";
 import "./InfoLayout.css";
 
-export default function PInfo() {
+export default function PersonalInfo() {
   return (
     <div>
       <div>

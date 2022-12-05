@@ -15,7 +15,7 @@ import Related from "./components/pages/paper/Related";
 import Read from "./components/pages/paper/Read";
 
 import Account from "./components/pages/user/account/Account";
-import PInfo from "./components/pages/user/account/personal-info/PInfo";
+import PersonalInfo from "./components/pages/user/account/personal-info/PersonalInfo";
 import FormL from "./components/pages/user/signup-login/FormL";
 import FormS from "./components/pages/user/signup-login/FormS";
 import SavedPapers from "./components/pages/user/account/saved-papers/SavedPapers";
@@ -31,8 +31,8 @@ function App() {
           <Route path="related-papers" element={<Related />} />
           <Route path="read-paper" element={<Read />} />
           <Route path="account" element={<Account />}>
-            <Route index element={<PInfo />} />
-            <Route path="personal-info" element={<PInfo />} />
+            <Route index element={<PersonalInfo />} />
+            <Route path="personal-info" element={<PersonalInfo />} />
             <Route path="saved-papers" element={<SavedPapers />} />
           </Route>
           <Route path="login" element={<FormL />} />
