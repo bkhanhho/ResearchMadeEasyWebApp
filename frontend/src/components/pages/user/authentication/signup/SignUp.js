@@ -11,9 +11,7 @@ const SignUp = () => {
     setIsSubmitted(true);
   }
   return (
-    <div>
-      {!isSubmitted ? <SignUpForm submitForm={submitSignUp} /> : <Success />}
-    </div>
+    <>{!isSubmitted ? <SignUpForm submitForm={submitSignUp} /> : <Success />}</>
   );
 };
 
