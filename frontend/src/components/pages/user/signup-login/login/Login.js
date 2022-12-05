@@ -1,10 +1,10 @@
 /* Login Page */
 
 import React from "react";
-import "../../../../App.css";
+import "../../../../../App.css";
 // import Footer from '../../../website/footer/Footer';
-import UseForm from "./UseForm";
-import validate from "./Validate";
+import UseForm from "../UseForm";
+import validate from "../Validate";
 
 const Login = ({ submitForm }) => {
   const { handleChange, handleSubmit, values, errors } = UseForm(

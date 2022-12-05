@@ -1,6 +1,6 @@
 import React from "react";
 import "./signup/FormS.css";
-import "./FormL.css";
+import "./login/FormL.css";
 
 const Success = () => {
   return (
