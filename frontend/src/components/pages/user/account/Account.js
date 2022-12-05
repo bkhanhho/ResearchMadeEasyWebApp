@@ -34,7 +34,7 @@ function Account() {
   }
 
   return (
-    <>
+    <div>
       <div className="side">
         <div className="side-container">
           <Link to="/account/saved-papers" className="side-links">
@@ -44,9 +44,9 @@ function Account() {
             Personal Information
           </Link>
         </div>
-        <Outlet />
       </div>
-    </>
+      <Outlet />
+    </div>
   );
 }
 
