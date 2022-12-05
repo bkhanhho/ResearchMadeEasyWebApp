@@ -1,0 +1,9 @@
+.card {
+  margin-bottom: 10px;
+}
+
+.summary {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
