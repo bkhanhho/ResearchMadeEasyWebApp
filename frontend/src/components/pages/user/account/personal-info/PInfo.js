@@ -1,9 +1,7 @@
 /* When user is logged in, they can view personal information. */
 
 import React from "react";
-import "../../../../App.css";
-import Footer from "../../../website/footer/Footer";
-import Account from "./Account";
+import "../../../../../App.css";
 import "./InfoLayout.css";
 
 export default function PInfo() {

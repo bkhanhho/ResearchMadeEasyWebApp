@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../../../../../App.css";
-import "../InfoLayout.css";
+import "../personal-info/InfoLayout.css";
 import "../../../../website/cards/DefaultPreviewCards.css";
 import SavedPaperCard from "./SavedPaperCard";
 import { collection, getDocs, doc } from "firebase/firestore";
