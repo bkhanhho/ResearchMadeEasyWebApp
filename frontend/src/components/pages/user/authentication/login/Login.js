@@ -1,23 +1,20 @@
 import React, { useState } from "react";
 import "./Login.css";
+import "../AuthenticationLayout.css";
 import LoginForm from "./LoginForm";
 import Success from "../Success";
 
-const FormL = () => {
+const Login = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  function submitFormL() {
+  function submitLogin() {
     setIsSubmitted(true);
   }
   return (
-    <>
-      <div className="form-container">
-        <span className="close-btn">×</span>
-        <div className="form-content-left"></div>
-        {!isSubmitted ? <LoginForm submitForm={submitFormL} /> : <Success />}
-      </div>
-    </>
+    <div>
+      {!isSubmitted ? <LoginForm submitForm={submitLogin} /> : <Success />}
+    </div>
   );
 };
 
-export default FormL;
+export default Login;

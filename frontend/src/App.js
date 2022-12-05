@@ -18,6 +18,7 @@ import PersonalInfo from "./components/pages/user/account/personal-info/Personal
 import Login from "./components/pages/user/authentication/login/Login";
 import SignUp from "./components/pages/user/authentication/signup/SignUp";
 import SavedPapers from "./components/pages/user/account/saved-papers/SavedPapers";
+import AuthenticationLayout from "./components/pages/user/authentication/AuthenticationLayout";
 
 function App() {
   return (
@@ -33,8 +34,10 @@ function App() {
             <Route path="personal-info" element={<PersonalInfo />} />
             <Route path="saved-papers" element={<SavedPapers />} />
           </Route>
-          <Route path="login" element={<Login />} />
-          <Route path="sign-up" element={<SignUp />} />
+          <Route element={<AuthenticationLayout />}>
+            <Route path="login" element={<Login />} />
+            <Route path="sign-up" element={<SignUp />} />
+          </Route>
         </Routes>
       </Router>
     </>

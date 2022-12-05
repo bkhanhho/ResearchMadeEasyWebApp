@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./SignUp.css";
+import "../AuthenticationLayout.css";
 import SignUpForm from "./SignUpForm";
 import Success from "../Success";
 
@@ -10,9 +11,7 @@ const SignUp = () => {
     setIsSubmitted(true);
   }
   return (
-    <div className="form-container">
-      <span className="close-btn">×</span>
-      <div className="form-content-left"></div>
+    <div>
       {!isSubmitted ? <SignUpForm submitForm={submitSignUp} /> : <Success />}
     </div>
   );
