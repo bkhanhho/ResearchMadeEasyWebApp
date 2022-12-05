@@ -16,7 +16,7 @@ import Related from "./components/pages/paper/related-papers/Related";
 import Account from "./components/pages/user/account/Account";
 import PersonalInfo from "./components/pages/user/account/personal-info/PersonalInfo";
 import FormL from "./components/pages/user/signup-login/FormL";
-import FormS from "./components/pages/user/signup-login/FormS";
+import FormS from "./components/pages/user/signup-login/signup/FormS";
 import SavedPapers from "./components/pages/user/account/saved-papers/SavedPapers";
 
 function App() {

@@ -1,11 +1,11 @@
-import React from 'react';
-import './FormS.css';
-import './FormL.css';
+import React from "react";
+import "./signup/FormS.css";
+import "./FormL.css";
 
 const Success = () => {
   return (
-    <div className='form-content-right'>
-      <h1 className='form-success'>We have received your request!</h1>
+    <div className="form-content-right">
+      <h1 className="form-success">We have received your request!</h1>
     </div>
   );
 };
