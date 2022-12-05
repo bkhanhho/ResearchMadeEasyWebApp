@@ -6,7 +6,8 @@ import PaperSubtitle from "./PaperSubtitle";
 import PaperSummary from "./PaperSummary";
 import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
-import RelatedPapersTable from "./RelatedPapersTable";
+import RelatedPapersTable from "./related-papers/RelatedPapersTable";
+import RelatedPapersList from "./related-papers/RelatedPapersList";
 
 export default function Paper() {
   const [paperInfo, setPaperInfo] = useState({});
@@ -19,6 +20,7 @@ export default function Paper() {
         setPaperInfo(backendResponse);
       }
     });
+
     return () => {
       mounted = false;
     };
@@ -39,6 +41,10 @@ export default function Paper() {
         categories={paperInfo?.category}
       />
       <PaperSummary summary={paperInfo.summary} />
+      <RelatedPapersList
+        paperId={paperInfo.paper_id}
+        category={paperInfo.category}
+      />
       <RelatedPapersTable title={paperInfo.title} abstract="abstract" />
     </div>
   );

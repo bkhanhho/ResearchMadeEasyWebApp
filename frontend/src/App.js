@@ -11,7 +11,7 @@ import Main from "./components/pages/home/Main";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Paper from "./components/pages/paper/Paper";
-import Related from "./components/pages/paper/Related";
+import Related from "./components/pages/paper/related-papers/Related";
 
 import Account from "./components/pages/user/account/Account";
 import PersonalInfo from "./components/pages/user/account/personal-info/PersonalInfo";
