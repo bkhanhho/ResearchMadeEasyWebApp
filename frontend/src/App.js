@@ -12,7 +12,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Paper from "./components/pages/paper/Paper";
 import Related from "./components/pages/paper/Related";
-import Read from "./components/pages/paper/Read";
 
 import Account from "./components/pages/user/account/Account";
 import PersonalInfo from "./components/pages/user/account/personal-info/PersonalInfo";
@@ -29,7 +28,6 @@ function App() {
           <Route path="/" exact element={<Main />} />
           <Route path="paper/:paperId" element={<Paper />} />
           <Route path="related-papers" element={<Related />} />
-          <Route path="read-paper" element={<Read />} />
           <Route path="account" element={<Account />}>
             <Route index element={<PersonalInfo />} />
             <Route path="personal-info" element={<PersonalInfo />} />
