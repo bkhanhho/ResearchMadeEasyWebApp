@@ -1,9 +1,8 @@
 /* When user is logged in, the user can view their subscriptions. */
 
 import React from "react";
-import "../../../../App.css";
-import Footer from "../../../website/footer/Footer";
-import Account from "./Account";
+import "../../../../../App.css";
+import Account from "../Account";
 import CardsSub from "./CardsSub";
 
 export default function Subscriptions() {

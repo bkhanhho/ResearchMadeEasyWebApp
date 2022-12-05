@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import "./AccountHome.css";
-import Subscriptions from "./Subscriptions";
+import Subscriptions from "./subscriptions/Subscriptions";
 import Footer from "../../../website/footer/Footer";
 import PersonalInfo from "./personal-info/PersonalInfo";
 import { Outlet } from "react-router-dom";
