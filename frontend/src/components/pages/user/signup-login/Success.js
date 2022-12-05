@@ -1,5 +1,5 @@
 import React from "react";
-import "./signup/FormS.css";
+import "./signup/SignUp.css";
 import "./login/FormL.css";
 
 const Success = () => {

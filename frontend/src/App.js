@@ -16,7 +16,7 @@ import Related from "./components/pages/paper/related-papers/Related";
 import Account from "./components/pages/user/account/Account";
 import PersonalInfo from "./components/pages/user/account/personal-info/PersonalInfo";
 import FormL from "./components/pages/user/signup-login/login/FormL";
-import FormS from "./components/pages/user/signup-login/signup/FormS";
+import SignUp from "./components/pages/user/signup-login/signup/SignUp";
 import SavedPapers from "./components/pages/user/account/saved-papers/SavedPapers";
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
             <Route path="saved-papers" element={<SavedPapers />} />
           </Route>
           <Route path="login" element={<FormL />} />
-          <Route path="sign-up" element={<FormS />} />
+          <Route path="sign-up" element={<SignUp />} />
         </Routes>
       </Router>
     </>
